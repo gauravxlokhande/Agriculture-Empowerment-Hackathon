@@ -1,9 +1,8 @@
 import { LightningElement, track } from 'lwc';
-import SMS from '@salesforce/resourceUrl/SMS';
 import { NavigationMixin } from 'lightning/navigation';
 export default class Header extends NavigationMixin (LightningElement) {
 
-    SMS = SMS;
+
     toggleMenu(event) {
         console.log('toggleMenu called');
         const menuItems = this.template.querySelector('.menu-items');
@@ -61,7 +60,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
     }

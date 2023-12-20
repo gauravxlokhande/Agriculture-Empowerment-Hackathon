@@ -1,8 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import SunnyWeather from '@salesforce/resourceUrl/WeatherApiSunny';
-
-
 import FetchWeatherData from '@salesforce/apex/AgricultureEmpowerment.GetWeatherData';
 
 
