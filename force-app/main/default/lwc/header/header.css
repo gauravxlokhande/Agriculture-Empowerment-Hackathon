@@ -1,0 +1,97 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+ }
+ 
+ .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+ }
+ 
+ .nav {
+    display: flex;
+ }
+ 
+ .nav div {
+    cursor: pointer;
+    padding: 10px;
+ }
+ 
+ .nav div:hover {
+    background-color: #34495e;
+ }
+ 
+ .home {
+    background-color: #3498db;
+ }
+ 
+ .seeds {
+    background-color: #e74c3c;
+ }
+ 
+ .market {
+    background-color: #2ecc71;
+ }
+ 
+ .news {
+    background-color: #f39c12;
+ }
+ 
+ .training {
+    background-color: #16a085;
+ }
+ 
+ .feedback {
+    background-color: #9b59b6;
+ }
+ 
+  /* For Mobile View */
+  .menu-items {
+    display: flex;
+    flex-direction: row;
+ }
+ 
+ .menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #dfd6d6;
+    margin: 5px 0;
+ }
+ 
+ /* For Mobile View */
+ @media screen and (max-width: 805px) {
+    .menu-items {
+       flex-direction: column;
+       position: absolute;
+       top: 61px;
+       left: 0;
+       width: 100%;
+       background-color: #376240;
+       display: none;
+       z-index: 1;
+   }
+ 
+  .menu-items.show {
+        display: flex;
+    }
+ 
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+ }
+ 
+ /* For Desktop View */
+ @media screen and (min-width: 806px) {
+    .menu-toggle {
+        display: none;
+    }
+ 
+    .menu-items {
+        display: flex;
+    }
+ }
