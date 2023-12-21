@@ -2,6 +2,7 @@ import { LightningElement, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 export default class Header extends NavigationMixin (LightningElement) {
 
+
     toggleMenu(event) {
         console.log('toggleMenu called');
         const menuItems = this.template.querySelector('.menu-items');
@@ -30,7 +31,7 @@ export default class Header extends NavigationMixin (LightningElement) {
 
         if (path.includes('home')) {
             this.homeClass = 'home';
-        } else if (path.includes('/agriEmp/s/seeds-and-fertilizers-page')) {
+        } else if (path.includes('AgricultureEmpowerment/s/seeds-and-fertilizers')) {
             this.seedsClass = 'seeds';
         } else if (path.includes('market')) {
             this.marketClass = 'market';
@@ -59,7 +60,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
     }
@@ -71,7 +72,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/training-and-support"
+               url: "	https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
  
@@ -84,7 +85,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/market-trends-page"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
  
@@ -96,7 +97,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/seeds-and-fertilizers-page"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/seeds-and-fertilizers"
             }
         });
  
@@ -109,7 +110,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/feedack-page"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
  
@@ -121,7 +122,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "thecodingstudio2-dev-ed.develop.my.site.com/agriEmp/s/new-and-tips-page"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
             }
         });
      }
