@@ -1,6 +1,7 @@
-public without sharing class AgricultureEmpowerment {
+public without Sharing class AgricultureEmpowerment {
 
-    // Weather Api to get weather data
+
+
     @AuraEnabled
     public static String GetWeatherData(String latitude, String longitude) {
 
@@ -24,4 +25,37 @@ public without sharing class AgricultureEmpowerment {
 
 
 
+    @AuraEnabled
+    public static String insertViews(String view){
+        List<Market_Trend__c> marketList = [Select Id,View__c From Market_Trend__c];
+
+            Market_Trend__c market  = new Market_Trend__c();
+            market.View__c = view;
+            market.Submission_Date__c = System.Today();
+            insert market;
+            return 'View Added Succesfully';
+    }
+    
+    @AuraEnabled
+    public static List<Market_Trend__c> showViews(){
+        List<Market_Trend__c> viewList = [Select View__c,Submission_Date__c From Market_Trend__c];
+        return viewList;
+    }
+    
+    
+    @AuraEnabled
+    public static List<Seasonal_Calendar__c>FetchSeasonalCalendarData(){
+        List<Seasonal_Calendar__c> seasonalCalendar = [Select Id, Start_Date__c,End_Date__c,Information__c,Types_of_Seasons__c,Crop__r.Name From Seasonal_Calendar__c ];
+        return seasonalCalendar;
+    }
+    
+    @AuraEnabled
+    public static String insertFeedback(String queryValue){
+        Feedback__c feedbackList = [Select Id, Description__c From Feedback__c];
+        Feedback__c feedback = new Feedback__c();
+        feedback.Description__c = queryValue;
+        feedback.Submission_Date__c = System.Today();
+        insert feedback;
+        return 'Query Inserted Succesfully!';
+    }
 }
