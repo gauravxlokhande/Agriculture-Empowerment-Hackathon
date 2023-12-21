@@ -51,7 +51,13 @@ img {
         font-size: 18px;
     }
 
+    .text-area{
+        margin-bottom: 15px;
+    }
     .button {
-        padding-top: 10px;
+        padding-top: 20px;
+    }
+    .image{
+        width: 300%;
     }
 }

@@ -9,19 +9,27 @@ export default class Feedback extends LightningElement {
     handleQueryChange(event){
         this.queryValue = event.target.value;
     }
-    handleSubmitClick(){
-        insertFeedback({queryValue:this.queryValue})
-        .then(result=>{
-            console.log('result',result);
+    handleSubmitClick() {
+        if (this.queryValue ==null) {
             this.dispatchEvent(new ShowToastEvent({
-                title: "Record Submitted Succesfully...",
-                variant: "success"
+                title: "please enter the text",
+                variant: "error"
             }));
-            this.queryValue = '';
-        })
-        .catch(error=>{
-            console.log('error',error);
-        })
+        } else {
+            insertFeedback({queryValue:this.queryValue})
+            .then(result=>{
+                console.log('result',result);
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Record Submitted Succesfully...",
+                    variant: "success"
+                }));
+                this.queryValue = '';
+            })
+            .catch(error=>{
+                console.log('error',error);
+            })
+        }
+       
 
 
     }

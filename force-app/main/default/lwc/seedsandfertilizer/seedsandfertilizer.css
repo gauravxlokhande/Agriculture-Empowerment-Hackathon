@@ -1,6 +1,6 @@
 /* Maindiv */
 .maincontainer {
-    background-color: #f5f5f5;
+    background: #f5f5f5;
     padding: 10px;
 }
 
@@ -9,13 +9,13 @@
 .container {
     position: relative;
     text-align: center;
-    color: #ffffff;
+    color:wheat;
 }
 
 .centered {
     position: absolute;
     top: 27%;
-    left: 19%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Times New Roman';
     font-size: xx-large;
@@ -34,24 +34,15 @@
 /* heading Seeds & Fertilizers*/
 .seedshead,
 .fertiheading {
-    background-color: rgb(153, 175, 176);
     display: flex;
     justify-content: center;
     font-size: xx-large;
-    font-family: 'Times New Roman';
-    border: 2px solid black;
-    color: black;
-    box-shadow: 10px 10px 5px rgb(60, 76, 76);
-    margin-top: 13px;
-    position: absolute;
-    left: 7%;
-    right: 7%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* seeds container & Fertilizer Container */
 .containerone {
-    margin-top: 6%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -60,21 +51,19 @@
 
 .block-container {
     margin-top: 15px;
-    border-radius: 15px;
+    padding: 10px;
+
 }
 
 .block {
     width: 265px;
-    height: 285px;
+    height: 290px;
     margin: 20px;
-    padding: 13px;
     background-color: #abcbb1;
-    box-shadow: 10px 10px 5px rgb(15, 16, 16);
-    border-radius: 15px;
+    border: 1px solid black;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
-    font-weight: bold;
-    font-family: 'Times New Roman';
 
 }
 
@@ -110,7 +99,7 @@
 .Information {
     padding-right: 7px;
     padding-left: 7px;
-    display: inline;
+
 }
 
 
@@ -122,8 +111,6 @@
     /* img & text */
     .centered {
         font-size: medium;
-        position: absolute;
-        left: 50%;
     }
 
     .paragraph {
@@ -137,7 +124,6 @@
 
     /* blocks */
     .block-container {
-        margin-top: 15%;
         flex-direction: column;
         align-items: center;
     }
@@ -145,4 +131,8 @@
     .block {
         margin-bottom: 20px;
     }
+
+
+
+    
 }
