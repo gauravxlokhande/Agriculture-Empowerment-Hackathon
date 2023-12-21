@@ -1,4 +1,4 @@
-import { LightningElement,api, track,wire } from 'lwc';
+import { LightningElement, track } from 'lwc';
 import insertViews from '@salesforce/apex/AEInsertViews.insertViews';
 import showViews from '@salesforce/apex/AEInsertViews.showViews';
 import FetchSeasonalCalendarData from '@salesforce/apex/AEInsertViews.FetchSeasonalCalendarData';

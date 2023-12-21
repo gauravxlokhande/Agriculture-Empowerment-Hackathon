@@ -1,10 +1,10 @@
 import { LightningElement, track } from 'lwc';
 import insertFeedback from '@salesforce/apex/AEInsertViews.insertFeedback';
-import SeedsandFertilizersss from '@salesforce/resourceUrl/SeedsandFertilizersss';
+import feedbackimage from '@salesforce/resourceUrl/feedbackimage';
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class Feedback extends LightningElement {
-    SeedsandFertilizersss = SeedsandFertilizersss;
+    feedbackimage = feedbackimage;
     @track queryValue;
     handleQueryChange(event){
         this.queryValue = event.target.value;

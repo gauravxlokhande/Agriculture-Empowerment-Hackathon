@@ -4,7 +4,7 @@
         <div class="main-container">
             <h1 class="main-heading">"Smart Farming Starts Here: Market Insights for Success"</h1>
             <p class="main-description">
-                Welcome to the Market Trends page, your gateway to a wealth of insights that can revolutionize your 
+                Welcome to the Market Trends page, your gateway to a wealth of insights that can revolutionize your
                 farming strategy. Stay ahead of the curve by delving into historical data and understanding the dynamic
                 shifts in crop prices.
             </p>
@@ -15,17 +15,9 @@
         <div class="slds-scrollable_y" style="height:10rem;width:100%" tabindex="0">
             <div class="custom-card">
                 <template if:true={seasonalItems}>
-                    <lightning-datatable
-                        key-field="Id"
-                        data={seasonalItems}
-                        columns={columns}
-                        hide-checkbox-column
-                        class="custom-datatable"
-                        default-sort-direction="asc"
-                        sorted-direction={sortDirection}
-                        sorted-by={sortedBy}
-                        onsort={handleSort}
-                    ></lightning-datatable>
+                    <lightning-datatable key-field="Id" data={seasonalItems} columns={columns} hide-checkbox-column
+                        class="custom-datatable" default-sort-direction="asc" sorted-direction={sortDirection}
+                        sorted-by={sortedBy} onsort={handleSort}></lightning-datatable>
                 </template>
                 <template if:false={seasonalItems}>
                     <div class="slds-text-align_center slds-p-vertical_medium custom-no-data-message">
@@ -35,24 +27,26 @@
             </div>
         </div>
 
-        
+
         <!-- Seasonal Calendar - End -->
 
 
         <lightning-layout class="container">
             <lightning-layout-item size="8" class="market-data">
-        <h1 style="text-align: center;" class="main-description">View Historical Data By Selecting Your City</h1>
+                <h1 style="text-align: center;" class="main-description">View Historical Data By Selecting Your City
+                </h1>
 
-        <div class="dropdowns">
-            <div class="cityDropDown">
-                <lightning-combobox name="city" label="City" value={searchValue} placeholder="Select a City"
-                    options={options} onchange={handleCityChange}></lightning-combobox>
-            </div>
-            <div class="commodityDropDown">
-                <lightning-combobox name="city" label="Commodity" value={commodityValue} placeholder="Select a Commodity"
-                options={commodity} onchange={handleCommodityChange}></lightning-combobox>
-            </div>
-        </div>
+                <div class="dropdowns">
+                    <div class="cityDropDown">
+                        <lightning-combobox name="city" label="City" value={searchValue} placeholder="Select a City"
+                            options={options} onchange={handleCityChange}></lightning-combobox>
+                    </div>
+                    <div class="commodityDropDown">
+                        <lightning-combobox name="city" label="Commodity" value={commodityValue}
+                            placeholder="Select a Commodity" options={commodity}
+                            onchange={handleCommodityChange}></lightning-combobox>
+                    </div>
+                </div>
 
 
                 <div class="data-container">
@@ -75,12 +69,13 @@
 
                 <lightning-textarea name="city" placeholder="Share your views..." value={viewValue}
                     onchange={handleViewChange} variant="standard" class="text-area"></lightning-textarea>
-            
-                <lightning-button  style="display: flex;justify-content:center" variant="brand" label="Submit" onclick={handleSubmitClick}></lightning-button>
+
+                <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
+                    onclick={handleSubmitClick}></lightning-button>
 
                 <p class="public-views">Community Perspectives: <br></p>
                 <template for:each={viewsData} for:item="vd">
-                    
+
                     <div key={vd.Id} class="public-view-item">
                         <p style="color: #34495e;">{vd.Submission_Date__c}</p>
 
@@ -93,6 +88,6 @@
         </lightning-layout>
     </div>
 
-    
+
 
 </template>
