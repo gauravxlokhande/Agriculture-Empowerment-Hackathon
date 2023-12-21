@@ -49,6 +49,5 @@ public without Sharing class AgricultureEmpowerment {
         feedback.Submission_Date__c = System.Today();
         insert feedback;
         return 'Query Inserted Succesfully!';
-        
     }
 }
