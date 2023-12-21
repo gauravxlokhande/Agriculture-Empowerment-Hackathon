@@ -16,24 +16,24 @@ public without Sharing class AgricultureEmpowerment {
         return viewList;
     }
     
-      @AuraEnabled
-    public static List<Seeds__c> FetchAllSeeds(){
-        List<Seeds__c> AllSeeds =[Select Id, Name,Recommended_Season__c,Image_Url__c,Information__c,Image__c,(Select Id, Name FROM Fertilizers__r) FROM Seeds__c];
-        return AllSeeds;
-    }
+    //   @AuraEnabled
+    // public static List<Seeds__c> FetchAllSeeds(){
+    //     List<Seeds__c> AllSeeds =[Select Id, Name,Recommended_Season__c,Image_Url__c,Information__c,Image__c,(Select Id, Name FROM Fertilizers__r) FROM Seeds__c];
+    //     return AllSeeds;
+    // }
     
     
-      @AuraEnabled
-     public static List<Fertilizers__c> FetchAllFertilizers(){
-        List<Fertilizers__c> AllFertilizers =[Select Id, Name,Image_Url__c,Information__c,Image__c,Seeds__r.Name FROM Fertilizers__c];
-        return AllFertilizers;
-    }
+    //   @AuraEnabled
+    //  public static List<Fertilizers__c> FetchAllFertilizers(){
+    //     List<Fertilizers__c> AllFertilizers =[Select Id, Name,Image_Url__c,Information__c,Image__c,Seeds__r.Name FROM Fertilizers__c];
+    //     return AllFertilizers;
+    // }
     
-    @AuraEnabled
-    Public Static List<News_Tips__c> FetchAllNewsData(){
-        List<News_Tips__c> NewsNTips =[Select Id,Headline__c,Description__c,Image__c,Website_url__c,Date__c FROM News_Tips__c];
-        return NewsNTips;
-    }
+    // @AuraEnabled
+    // Public Static List<News_Tips__c> FetchAllNewsData(){
+    //     List<News_Tips__c> NewsNTips =[Select Id,Headline__c,Description__c,Image__c,Website_url__c,Date__c FROM News_Tips__c];
+    //     return NewsNTips;
+    // }
     
     @AuraEnabled
     public static List<Seasonal_Calendar__c>FetchSeasonalCalendarData(){
