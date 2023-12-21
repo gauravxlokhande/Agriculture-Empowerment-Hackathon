@@ -1,7 +1,7 @@
 import { LightningElement,api, track,wire } from 'lwc';
-import insertViews from '@salesforce/apex/AEInsertViews.insertViews';
-import showViews from '@salesforce/apex/AEInsertViews.showViews';
-import FetchSeasonalCalendarData from '@salesforce/apex/AEInsertViews.FetchSeasonalCalendarData';
+import insertViews from '@salesforce/apex/AgricultureEmpowerment.insertViews';
+import showViews from '@salesforce/apex/AgricultureEmpowerment.showViews';
+import FetchSeasonalCalendarData from '@salesforce/apex/AgricultureEmpowerment.FetchSeasonalCalendarData';
 
 const columns = [
     // { label: 'Season Name', fieldName: 'Name', type: 'text' },
