@@ -1,0 +1,140 @@
+/* Main Container */
+.main {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+
+/* Weather Api */
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.imageweather {
+    width: 100%;
+}
+
+.weather-info {
+    position: static;
+    top: 24%;
+    padding-top: 15px;
+}
+
+.location {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.temperature {
+    font-size: 36px;
+    color: #ff5722;
+}
+
+.condition {
+    font-size: 18px;
+    color: green;
+}
+
+.local-time {
+    color: rgb(46, 37, 37);
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+
+
+
+/* Heading And Description */
+.heading {
+    font-size: 30px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.main-description {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Select City Picklist */
+.combobox {
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-bottom: 12px;
+}
+
+
+/* All Agriculture Data */
+.data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.data-item {
+    background-color: #abcbb1;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 10px 10px rgb(60, 61, 62);
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.data-item:hover {
+    background-color: #f0f0f0;
+    transform: calc(1.1);
+}
+
+
+
+
+
+
+@media (max-width: 989px) {
+    .combobox {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+/* Mobile Styles */
+@media only screen and (max-width: 789px) {
+    .imageweather {
+        max-width: 100%;
+    }
+
+    .weather-info {
+        position: static;
+        padding-top: 15px;
+    }
+
+    .location {
+        font-size: 18px;
+    }
+
+    .temperature {
+        font-size: 24px;
+    }
+
+    .condition {
+        font-size: 14px;
+    }
+
+    .local-time {
+        font-size: 14px;
+    }
+}
+

@@ -66,10 +66,12 @@
  @media screen and (max-width: 805px) {
     .menu-items {
        flex-direction: column;
-       position: absolute;
-       top: 61px;
-       left: 0;
-       width: 100%;
+       position: fixed;
+       text-align: center;
+       align-items: center;
+       top: 96px;
+       left: 10%;
+       width: 80%;
        background-color: #376240;
        display: none;
        z-index: 1;
