@@ -1,9 +1,7 @@
 import { LightningElement, track } from 'lwc';
-import SMS from '@salesforce/resourceUrl/SMS';
 import { NavigationMixin } from 'lightning/navigation';
 export default class Header extends NavigationMixin (LightningElement) {
 
-    SMS = SMS;
     toggleMenu(event) {
         console.log('toggleMenu called');
         const menuItems = this.template.querySelector('.menu-items');
