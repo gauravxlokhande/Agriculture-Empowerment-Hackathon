@@ -1,0 +1,148 @@
+/* Maindiv */
+.maincontainer {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+
+/* Image And Text */
+.container {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+}
+
+.centered {
+    position: absolute;
+    top: 27%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    font-family: 'Times New Roman';
+    font-size: xx-large;
+}
+
+.paragraph {
+    position: absolute;
+    top: 35%;
+    font-family: 'Trebuchet MS';
+    font-size: small;
+
+}
+
+
+
+/* heading Seeds & Fertilizers*/
+.seedshead,
+.fertiheading {
+    background-color: rgb(153, 175, 176);
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: 'Times New Roman';
+    border: 2px solid black;
+    color: black;
+    box-shadow: 10px 10px 5px rgb(60, 76, 76);
+    margin-top: 13px;
+    position: absolute;
+    left: 7%;
+    right: 7%;
+}
+
+
+/* seeds container & Fertilizer Container */
+.containerone {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.block-container {
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+.block {
+    width: 265px;
+    height: 285px;
+    margin: 20px;
+    padding: 13px;
+    background-color: #abcbb1;
+    box-shadow: 10px 10px 5px rgb(15, 16, 16);
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    word-wrap: break-word;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+
+}
+
+.block:hover {
+    transform: scale(1.1);
+}
+
+.image-container {
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.info-container {
+    margin: 10px;
+}
+
+.Name,
+.Season {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+
+.Name b,
+.Season b {
+    font-size: larger;
+}
+
+.Information {
+    padding-right: 7px;
+    padding-left: 7px;
+    display: inline;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    /* img & text */
+    .centered {
+        font-size: medium;
+        position: absolute;
+        left: 50%;
+    }
+
+    .paragraph {
+        margin-top: 8px;
+        font-size: xx-small;
+    }
+
+    .image {
+        height: 170px;
+    }
+
+    /* blocks */
+    .block-container {
+        margin-top: 15%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block {
+        margin-bottom: 20px;
+    }
+}
