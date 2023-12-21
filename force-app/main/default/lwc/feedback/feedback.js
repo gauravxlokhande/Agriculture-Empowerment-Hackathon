@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import insertFeedback from '@salesforce/apex/AEInsertViews.insertFeedback';
+import insertFeedback from '@salesforce/apex/AgricultureEmpowerment.insertFeedback';
 import feedbackimage from '@salesforce/resourceUrl/feedbackimage';
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';

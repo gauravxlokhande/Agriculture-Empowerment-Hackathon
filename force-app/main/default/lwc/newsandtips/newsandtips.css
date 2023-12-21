@@ -1,3 +1,156 @@
-.coming{
-    
+/* Marquee effect slider */
+.marque {
+    margin-bottom: 10px;
+    font-size: medium;
+    color: #181921;
+}
+
+
+/* heading of page */
+.heading {
+    font-size: xx-large;
+    font: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    display: inline-block;
+    animation: flicker 1s infinite;
+    color: rgb(185, 51, 51);
+}
+
+/* Description in pargraph */
+.description {
+    font-size: medium;
+    font: bold;
+    font-family: Arial;
+    color: #181921;
+    margin-left: 22px;
+}
+
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+}
+
+
+
+/* News Boxes */
+.data-container {
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.data-item {
+    background-color: whitesmoke;
+    border-top: black 1px dotted;
+    border-bottom: black 1px dotted;
+    padding: 7px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: 10%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    word-wrap: break-word;
+    font-size: 120%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+
+/* News Image */
+.information {
+    margin-left: 15px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Agriculture Tips */
+.agritips {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    font: bolder;
+}
+
+.container {
+    flex-wrap: wrap;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.tips-section {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+p {
+    color: #555;
+}
+
+
+/* Responsive styles for mobile view */
+@media screen and (max-width: 600px) {
+
+    /* heading */
+    .heading {
+        font-size: x-large;
+    }
+
+    /* news box */
+    .data-container {
+        flex-wrap: wrap;
+    }
+
+    .data-item {
+        width: calc(100% - 10px);
+        font-size: small;
+        padding: 5px;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* news Image */
+    .image {
+        width: 95%;
+        height: 95%;
+        padding: 12px;
+        margin-left: 23px;
+    }
+
+
+    /* Agriculture Tips */
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
 }

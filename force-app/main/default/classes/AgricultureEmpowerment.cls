@@ -61,13 +61,6 @@ public without sharing class AgricultureEmpowerment {
             insert market;
             return 'View Added Succesfully';
     }
-
-
-
-
-
-    
- 
     
     @AuraEnabled
     public static List<Seasonal_Calendar__c>FetchSeasonalCalendarData(){
@@ -84,5 +77,14 @@ public without sharing class AgricultureEmpowerment {
         insert feedback;
         return 'Query Inserted Succesfully!';
     }
+
+
+      
+    @AuraEnabled 
+    Public Static List<News_Tips__c> FetchAllNewsData(){
+        List<News_Tips__c> NewsNTips =[Select Id,Headline__c,Description__c,Image_Url__c,Website_url__c,Date__c FROM News_Tips__c];
+        return NewsNTips;
+    }
+    
 
 }

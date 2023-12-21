@@ -66,7 +66,7 @@
  @media screen and (max-width: 805px) {
     .menu-items {
        flex-direction: column;
-       position: fixed;
+       position: absolute;
        text-align: center;
        align-items: center;
        top: 96px;

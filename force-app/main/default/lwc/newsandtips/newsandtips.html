@@ -1,3 +1,199 @@
 <template>
-    
+
+    <!-- Information Sliding -->
+    <marquee class="marque" key={heading.Id} behavior="scroll" scorllamount="10" direction="left">
+        Welcome to Agriculture Empowerment, your one-stop destination for staying informed about the latest happenings
+        in the
+        world of
+        agriculture. We understand the importance of staying up-to-date with the rapidly evolving agricultural
+        landscape, and
+        that's why we've curated a comprehensive platform for all your agricultural news needs.
+    </marquee>
+
+
+    <!-- Heading -->
+    <div class="heading">
+        <h6>Cultivating Insights: Latest Agriculture News</h6>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        <p> Explore the ever-evolving world of agriculture with our curated selection of the latest news and trends.
+            Stay
+            informed
+            about groundbreaking technologies, sustainable practices, global market updates, and success stories from
+            the farming
+            community. Whether you're a seasoned farmer, agribusiness enthusiast, or simply interested in the future of
+            food
+            production, "Cultivating Insights" is your go-to source for staying connected to the pulse of the
+            agricultural world.
+            Harvest the knowledge you need to thrive in a rapidly changing industry. Join us on the journey of growth,
+            innovation,
+            and sustainable farming practices.</p>
+    </div>
+
+
+
+    <!--All News In Boxes -->
+    <div class="data-container">
+        <template for:each={StoreNewsTipsData} for:item="data">
+            <div key={data.id} class="data-item">
+
+                <img class="image" style=" width: 250px; height:150px; padding-left: 5px" src={data.Image_Url__c}
+                    alt="">
+
+                <div class="information">
+                    <div class="info">
+                        <b style="font-size: larger;">{data.Headline__c}</b>
+                        <lightning-formatted-date-time value={data.Date__c} day="2-digit" month="2-digit"
+                            year="2-digit"></lightning-formatted-date-time>
+                    </div>
+
+                    <!-- <br> -->
+                    <p class="description" style="display:inline">{data.Description__c}</p>
+                    <lightning-formatted-url value={data.Website_url__c} label="Read More..."
+                        target={data.Website_url__c}></lightning-formatted-url>
+                </div>
+
+            </div>
+        </template>
+    </div>
+
+
+
+    <!-- Tips For Agriculture -->
+    <h6 class="agritips">Agriculture Tips: Crop Selection to Harvesting</h6>
+
+    <div class="container">
+
+        <section id="cropSelection" class="tips-section">
+            <h2>1. Crop Selection</h2>
+            <p>Different types of crops need different soil types, nutrients, and water. Also, the amount of water
+                required by the
+                plant is dependent on the growing season and the climate where it is grown. Proper crop selection is the
+                main factor in
+                successful crop farming. Some important crop selection factors are;</p>
+        </section>
+
+        <section id="soilPreparation" class="tips-section">
+            <h2>2. Soil Preparation</h2>
+            <p>For growing crops, the soil in which it is to be grown is prepared by ploughing, levelling, and manuring.
+                Ploughing is
+                the way of loosening and digging of soil and this helps in proper soil aeration. The soil is distributed
+                evenly and
+                levelled in the process known as levelling. The soil is then manured. Soil texture, compaction, cation
+                exchange
+                capacity, and organic matter content are just a few of the variables that can impact crop growth.
+                Planting crops that
+                are well-suited to your soil characteristics gives you a better chance of success in agriculture.
+                Growers can have an
+                impact on soil characteristics through some cultivation practices, by adding amendments, using certain
+                planting methods,
+                or employing methods to alter factors such as soil temperature, moisture retention, or compaction.
+                Though, working with
+                a soil that already meets most of a given crop’s needs increases the chances of success.</p>
+        </section>
+
+        <section id="seedselection" class="tips-section">
+            <h2>3. Seed Selection</h2>
+            <p>Seed selection is very important for crop growth. A seed must be good so it will grow into a plant
+                otherwise we will not
+                get the result and we must select good and healthy seeds.</p>
+        </section>
+
+        <section id="seedSowing" class="tips-section">
+            <h2>4. Seed Sowing</h2>
+            <p>The selection of seeds of good quality crop strains is the main stage of sowing. After the soil
+                preparation,
+                these seeds are dispersed in the field, and this is known as sowing. Seed sowing can be done manually,
+                by hand,
+                or by using seed drilling machines. Some crops like paddy are first grown into seedlings in a small
+                region and
+                then transplanted to the main field. Good quality seeds are out of reach of the majority of farmers
+                because of
+                the exorbitant prices of better seeds.</p>
+        </section>
+
+        <section id="irrigation" class="tips-section">
+            <h2>5. Irrigation</h2>
+            <p>Any sustainable agricultural practice needs a good level of irrigation at regular intervals. The modern
+                method to
+                begin it is the drip irrigation system. Also, this helps you in saving water by not wasting oodles of
+                extra
+                amount or losing it all quickly due to the heat. As it can be machine-controlled, the supervision
+                becomes
+                easier.</p>
+            <p>Irrigation meaning is the supply of water. Sources of water can be wells, ponds, lakes, canals, and dams,
+                etc.
+                Over irrigation can lead to waterlogging and damage the crop. Then, this is frequency and interval
+                between
+                successive irrigation need to be controlled.</p>
+        </section>
+
+
+        <section id="fertilizersManures" class="tips-section">
+            <h2>6. Fertilizers and Manures</h2>
+            <p>Organic methods will help promote healthy crop growth and some examples of organic methods include
+                composting,
+                mulching, and using bio-fertilizers. Vermicomposting is also another excellent method of introducing
+                important
+                nutrients into the soil naturally.</p>
+            <p>The different types of fertilizers are – Inorganic fertilizer- Nitrogen fertilizer, Phosphorus
+                fertilizer.
+                Organic fertilizers are agricultural waste, livestock manure, and municipal sludge.</p>
+            <p>Crops need nutrients to grow and produce yield. Therefore, the supply of nutrients at regular intervals
+                is
+                necessary. Manuring is the step where nutritional supplements are provided, and these supplements can be
+                natural
+                (manure) or chemical compounds (fertilizers). Also, manure is the decomposition product of plant and
+                animal
+                wastes. Fertilizers are chemical compounds consisting of plant nutrients and are farmed commercially.
+                Apart from
+                providing essential nutrients to the crop, manure replenishes soil fertility as well. Other main
+                approaches for
+                soil replenishment are vermicomposting, crop rotation, and planting leguminous plants.</p>
+        </section>
+
+        <section id="weedManagement" class="tips-section">
+            <h2>7. Weed Management</h2>
+            <p>Generally, weeds are unwanted plants that grow among crops. They are removed by using weedicides, by
+                manually
+                pulling them with hands, and some weeds are removed during soil preparation. It can be a stumbling block
+                to
+                producing crops. Weeds can reduce your crop yields and consume resources intended for crops.</p>
+            <p>For controlling weeds, there are many options in organic farming like manual weeding (hand removal,
+                pulling, and
+                cutting), mowing, mechanical cultivation, and thermal control (flaming).</p>
+        </section>
+
+        <section id="pestsDiseasesManagement" class="tips-section">
+            <h2>8. Tips for Pests and Diseases Management in Agriculture</h2>
+            <p>Major plant pests and diseases are viruses, bacteria, fungi, and insects greatly impair their
+                productivity. Crops
+                can be protected from several pests and diseases by using pesticides and biocontrol agents. The
+                cultivated
+                grains should be stored safely to avoid product loss.</p>
+            <p>Some important mechanical and physical control methods are tillage, mowing, cutting, and mulching.</p>
+        </section>
+
+        <section id="harvesting" class="tips-section">
+            <h2>9. Tips for Harvesting Plants</h2>
+            <p>Once the crop is matured, it is cut and gathered carefully, this process is called harvesting. Followed
+                by
+                harvesting, grains are separated from the chaff either by using threshing, or manually on a small scale
+                (winnowing).</p>
+            <p>For harvest procedures, the subsequent points are important by selecting the correct harvest time refers
+                to the
+                ripeness and maturity of the produce. Optimal harvest times are early morning hours or the evening when
+                temperature levels are lower. Harvesting of delicate and high-value produce is best done manually.</p>
+        </section>
+
+
+    </div>
+
+
+
+
+
+
 </template>

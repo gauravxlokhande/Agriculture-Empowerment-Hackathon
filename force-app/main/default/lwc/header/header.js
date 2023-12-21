@@ -35,11 +35,11 @@ export default class Header extends NavigationMixin (LightningElement) {
             this.seedsClass = 'seeds';
         } else if (path.includes('market')) {
             this.marketClass = 'market';
-        } else if (path.includes('/agriEmp/s/new-and-tips-page')) {
+        } else if (path.includes('AgricultureEmpowerment/s/newsandtipspage')) {
             this.newsClass = 'news';
         } else if (path.includes('training')) {
             this.trainingClass = 'training';
-        } else if (path.includes('/agriEmp/s/feedack-page')) {
+        } else if (path.includes('AgricultureEmpowerment/s/feedback')) {
             this.feedbackClass = 'feedback';
         }
     }
@@ -72,7 +72,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "	https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
+               url: "	https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/trainingandsupportpage"
             }
         });
  
@@ -85,7 +85,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/markettrendspage"
             }
         });
  
@@ -110,7 +110,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/feedback"
             }
         });
  
@@ -122,7 +122,7 @@ export default class Header extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/"
+               url: "https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/newsandtipspage"
             }
         });
      }
