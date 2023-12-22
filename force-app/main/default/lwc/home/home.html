@@ -43,6 +43,7 @@
         </template>
 
         <!-- All City Related Commodity Data -->
+
         <div class="data-container">
             <template for:each={StoreAgricultureData} for:item="data">
                 <div key={data.id} class="data-item">
@@ -58,6 +59,13 @@
             </template>
         </div>
 
+        <template if:false={StoreAgricultureData}>
+            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
+                Market Opens at 2pm
+            </h1>
+            <h2 style="display: flex; justify-content:center; "><b>Note: </b> It is a live market data show it is
+                visible after the market open.</h2>
+        </template>
 
 
     </div>

@@ -22,7 +22,7 @@ public without sharing class AgricultureEmpowerment {
         return '';
     }
 
-
+      // To Fetch Seeds data
       @AuraEnabled
       public static List<Seeds__c> FetchAllSeeds() {
         List<Seeds__c> AllSeeds = [
@@ -33,6 +33,7 @@ public without sharing class AgricultureEmpowerment {
       return AllSeeds;
      }
 
+       // To Fertilizers Seeds data
       @AuraEnabled
       public static List<Fertilizers__c> FetchAllFertilizers() {
       List<Fertilizers__c> AllFertilizers = [
@@ -43,14 +44,8 @@ public without sharing class AgricultureEmpowerment {
       return AllFertilizers;
       }
     
-      @AuraEnabled
-       public static List<Market_Trend__c> showViews(){
-        List<Market_Trend__c> viewList = [Select View__c,Submission_Date__c From Market_Trend__c];
-        return viewList;
-    }
-    
-    
-
+     
+       // To insert views of farmers 
      @AuraEnabled
     public static String insertViews(String view){
         List<Market_Trend__c> marketList = [Select Id,View__c From Market_Trend__c];
@@ -61,30 +56,31 @@ public without sharing class AgricultureEmpowerment {
             insert market;
             return 'View Added Succesfully';
     }
+
+      // Show views of farmers
+      @AuraEnabled
+       public static List<Market_Trend__c> showViews(){
+        List<Market_Trend__c> viewList = [Select View__c,Submission_Date__c From Market_Trend__c];
+        return viewList;
+    }
     
+    
+     // Seasonal calender data
     @AuraEnabled
     public static List<Seasonal_Calendar__c>FetchSeasonalCalendarData(){
         List<Seasonal_Calendar__c> seasonalCalendar = [Select Id, Start_Date__c,End_Date__c,Information__c,Seeds__r.Name From Seasonal_Calendar__c ];
         return seasonalCalendar;
     }
     
+    // To insert Feedback
     @AuraEnabled
     public static String insertFeedback(String queryValue){
-        Feedback__c feedbackList = [Select Id, Description__c From Feedback__c];
-        Feedback__c feedback = new Feedback__c();
-        feedback.Description__c = queryValue;
+        Feedbacks__c feedback = new Feedbacks__c();
+        feedback.Feedback__c = queryValue;
         feedback.Submission_Date__c = System.Today();
         insert feedback;
+        System.debug(feedback);
         return 'Query Inserted Succesfully!';
     }
-
-
-      
-    @AuraEnabled 
-    Public Static List<News_Tips__c> FetchAllNewsData(){
-        List<News_Tips__c> NewsNTips =[Select Id,Headline__c,Description__c,Image_Url__c,Website_url__c,Date__c FROM News_Tips__c];
-        return NewsNTips;
-    }
     
-
 }
