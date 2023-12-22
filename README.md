@@ -1,6 +1,16 @@
 
 # Agricultural Empowerment - Nurturing Growth, Empowering Farmers.
 
+## To Explore Our Website go to:
+```
+https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/
+```
+
+## Here you can able to understand our concept:
+
+https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/63b37ddc-5dba-4295-a715-c56e379cf15b
+
+
 At Agricultural Empowerment , we're dedicated to providing farmers with a one-stop solution for all their agricultural needs. Our platform is designed to empower farmers with valuable insights, real-time market data, and a wealth of resources to enhance their farming experience.
 
 ## Market Insights:
