@@ -1,6 +1,11 @@
 
 # Agricultural Empowerment - Nurturing Growth, Empowering Farmers.
 
+## PPt Of Our Project is here:
+```
+https://www.canva.com/design/DAF3rY8Yb-M/kxtWO_CqZUz6HodPl_czxQ/edit?utm_content=DAF3rY8Yb-M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+```
+
 ## To Explore Our Website go to:
 ```
 https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/
