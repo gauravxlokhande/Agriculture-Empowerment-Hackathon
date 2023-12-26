@@ -6,46 +6,37 @@
 
 
 /* Weather Api */
-.weather-container {
+.card{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+    border: 1px solid #3f3b3b;
+    border-radius: 4px;
+    padding: 30px;
+    background-color: #504e5e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out; 
 }
-
-.imageweather {
-    width: 100%;
+.card:hover {
+    transform: scale(1.01);
 }
+.card-content{
+    border: 1px solid #332d2d;
+    border-radius: 4px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #fff;
 
-.weather-info {
-    position: static;
-    top: 24%;
-    padding-top: 15px;
 }
-
-.location {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+.degree{
+    font-size: x-large;
 }
-
-.temperature {
-    font-size: 36px;
-    color: #ff5722;
+.location{
+    color: brown;
+    font-size: large;
 }
-
-.condition {
-    font-size: 18px;
-    color: green;
-}
-
-.local-time {
-    color: rgb(46, 37, 37);
-    font-family: 'Times New Roman';
-    font-weight: bold;
-}
-
 
 
 

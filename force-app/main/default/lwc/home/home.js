@@ -8,7 +8,7 @@ import FetchWeatherData from '@salesforce/apex/AgricultureEmpowerment.GetWeather
 export default class Home extends LightningElement {
 
     connectedCallback() {
-        this.getLocation();
+        this.handleCurrentLocation();
     }
 
     // Weather image
@@ -16,9 +16,9 @@ export default class Home extends LightningElement {
 
 
     // Weather
-    @track weatherData = '';
-    @track weatherImage;
-    @track weatherDescription;
+    @track result = '';
+    @track imageURL;
+    @track date;
 
     //Agriculture
     @track StoreAgricultureDataTemplate = true;
@@ -39,49 +39,45 @@ export default class Home extends LightningElement {
 
 
 
+
+
+
     // Get Current User Location
-    getLocation() {
+    handleCurrentLocation() {
+        // Check if geolocation is supported by the browser
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    console.log('latitude' + latitude)
-                    console.log('longitude' + longitude)
+                    const currentLocation = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    };
+                    console.log('Current Location:', currentLocation);
 
-                    // Fetch Data According To Current user City
-                    FetchWeatherData({ latitude: latitude, longitude: longitude })
-                        .then((result) => {
-                            this.weatherData = JSON.parse(result);
-                            this.weatherDescription = this.weatherData.current.weather_descriptions[0];
-                            this.weatherImage = this.weatherData.current.weather_icons[0];
+                    let endPoint = `https://api.weatherapi.com/v1/current.json?key=6388b321ff7a4f239de125943230612&q=${currentLocation.latitude},${currentLocation.longitude}`;
+
+                    fetch(endPoint, {
+                        method: 'GET'
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log('Weather data:', data);
+                            this.result = data;
+                            this.imageURL = this.result.current.condition.icon;
+                            this.date = this.result.location.localtime;
+                            console.log('image',this.imageURL);
+
                         })
                         .catch((error) => {
-                            this.dispatchEvent(new ShowToastEvent({
-                                title: 'Weather Data Error',
-                                message: error.body.message,
-                                variant: 'error'
-                            }));
+                            console.error('Error fetching weather data:', error);
                         });
                 },
                 (error) => {
-                    this.dispatchEvent(
-                        new ShowToastEvent({
-                            title: 'Location Error',
-                            message: error.body.message,
-                            variant: 'error',
-                        })
-                    );
+                    console.error('Error getting location:', error);
                 }
             );
         } else {
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Location Error',
-                    message: 'Geolocation is not supported by this browser.',
-                    variant: 'error',
-                })
-            );
+            console.error('Geolocation is not supported by this browser.');
         }
     }
 

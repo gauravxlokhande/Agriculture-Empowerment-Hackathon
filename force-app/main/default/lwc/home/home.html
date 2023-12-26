@@ -3,72 +3,74 @@
     <marquee style="font-weight: bolder;" behavior="" direction="right">WELCOME TO THE AGRICULTURE EMPOWERMENT SITE
     </marquee>
 
+    <div class="card">
+        <!-- Weather Data -->
+        <div class="card">
+            <template if:true={result}>
+                <div class="card-content">
+                    <div class="weather-info">
+                        <img class="weather-icon" src={imageURL} alt="Weather Icon" />
+                        <p class="condition">{result.current.condition.text}</p>
+                    </div>
+                    <div class="additional-info">
+                        <div>
+                            <p class="degree"><b>{result.current.feelslike_c}°C </b></p>
+                        </div>
 
-    <div class="main">
-        <img class="imageweather" style="border-radius: 2%;" src={SunnyWeatherGif} alt="">
-        <div class="weather-container">
-            <!-- Weather Data -->
-            <template if:true={weatherData}>
-                <div class="weather-info">
-                    <h1 class="weatherheading">Weather Report</h1>
-                    <img src={weatherImage} alt='Weather Image' style="border-radius: 20%;">
-                    <div class="location">{weatherData.location.name}, {weatherData.location.region},
-                        {weatherData.location.country}</div>
-                    <div class="local-time">{weatherData.location.localtime}</div>
-                    <div class="temperature">{weatherData.current.temperature}°C</div>
-                    <div class="condition">{weatherDescription}</div>
+                        <p class="location">{result.location.name}, {result.location.region}, {result.location.country}
+                        </p>
+                        <p class="local-time">{date}</p>
+                    </div>
                 </div>
             </template>
         </div>
-
-
-        <!-- City Market Insights -->
-        <h1 class="heading">City Market Insights</h1>
-        <p class="main-description">
-            City Market Insights provides a comprehensive overview of local agricultural markets, offering
-            you a detailed glimpse into the dynamics of each city's agricultural landscape. Explore real-time
-            data on commodities, arrival dates, pricing trends, and more. Gain valuable insights to make
-            informed decisions in the ever-evolving world of agriculture. Whether you're a farmer, trader, or
-            enthusiast, City Market Insights equips you with the knowledge needed to navigate and thrive in your city's
-            agricultural markets. <br> <br>
-            Select Your City to Know More About Market!
-        </p>
-
-
-
-        <!-- Picklist To Select City -->
-        <template if:true={StoreAgricultureDataTemplate}>
-            <lightning-combobox class="combobox" value={selectedLocation} options={locationOptions}
-                placeholder="Select Your City" onchange={handleChangeofSelectedCity}></lightning-combobox>
-        </template>
-
-        <!-- All City Related Commodity Data -->
-
-        <div class="data-container">
-            <template for:each={StoreAgricultureData} for:item="data">
-                <div key={data.id} class="data-item">
-                    <p><b>Arrival Date:</b> {data.arrival_date}</p>
-                    <p><b>Commodity:</b> {data.commodity}</p>
-                    <p><b>District:</b> {data.district}</p>
-                    <p><b>Market:</b> {data.market}</p>
-                    <p><b>Max Price:</b> {data.max_price}</p>
-                    <p><b>Min Price:</b> {data.min_price}</p>
-                    <p><b>Modal Price:</b> {data.modal_price}</p>
-                    <p><b>State:</b> {data.state}</p>
-                </div>
-            </template>
-        </div>
-
-        <template if:true={DataNotfoundTemplate}>
-            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
-                Market Opens at 2pm
-            </h1>
-            <h2 style="display: flex; justify-content:center; "><b>Note: </b> It is a live market data show it is
-                visible after the market open.</h2>
-        </template>
-
-
     </div>
+
+    <!-- City Market Insights -->
+    <h1 class="heading">City Market Insights</h1>
+    <p class="main-description">
+        City Market Insights provides a comprehensive overview of local agricultural markets, offering
+        you a detailed glimpse into the dynamics of each city's agricultural landscape. Explore real-time
+        data on commodities, arrival dates, pricing trends, and more. Gain valuable insights to make
+        informed decisions in the ever-evolving world of agriculture. Whether you're a farmer, trader, or
+        enthusiast, City Market Insights equips you with the knowledge needed to navigate and thrive in your city's
+        agricultural markets. <br> <br>
+        Select Your City to Know More About Market!
+    </p>
+
+
+
+    <!-- Picklist To Select City -->
+    <template if:true={StoreAgricultureDataTemplate}>
+        <lightning-combobox class="combobox" value={selectedLocation} options={locationOptions}
+            placeholder="Select Your City" onchange={handleChangeofSelectedCity}></lightning-combobox>
+    </template>
+
+    <!-- All City Related Commodity Data -->
+
+    <div class="data-container">
+        <template for:each={StoreAgricultureData} for:item="data">
+            <div key={data.id} class="data-item">
+                <p><b>Arrival Date:</b> {data.arrival_date}</p>
+                <p><b>Commodity:</b> {data.commodity}</p>
+                <p><b>District:</b> {data.district}</p>
+                <p><b>Market:</b> {data.market}</p>
+                <p><b>Max Price:</b> {data.max_price}</p>
+                <p><b>Min Price:</b> {data.min_price}</p>
+                <p><b>Modal Price:</b> {data.modal_price}</p>
+                <p><b>State:</b> {data.state}</p>
+            </div>
+        </template>
+    </div>
+
+    <template if:true={DataNotfoundTemplate}>
+        <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
+            Market will be opening soon
+        </h1>
+        <h2 style="display: flex; justify-content:center; "><b>Note: </b> It's a live market data show it is
+            visible when market opens.</h2>
+    </template>
+
 
 
 </template>
