@@ -2,27 +2,30 @@ import { LightningElement, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 export default class Header extends NavigationMixin (LightningElement) {
 
+    connectedCallback() {
+        this.setActiveTab();
+    }
 
-    toggleMenu(event) {
+
+     //For active button
+     @track homeClass = '';
+     @track seedsClass = '';
+     @track marketClass = '';
+     @track newsClass = '';
+     @track trainingClass = '';
+     @track feedbackClass = '';
+
+
+
+    
+     toggleMenu() {
         console.log('toggleMenu called');
         const menuItems = this.template.querySelector('.menu-items');
         if (menuItems) {
             menuItems.classList.toggle('show');
         }
     }
-
-    //For active button
-    @track homeClass = '';
-    @track seedsClass = '';
-    @track marketClass = '';
-    @track newsClass = '';
-    @track trainingClass = '';
-    @track feedbackClass = '';
-
-    connectedCallback() {
-        this.setActiveTab();
-    }
-
+   
     setActiveTab() {
         const path = window.location.pathname;
         console.log('Current Path:', path);

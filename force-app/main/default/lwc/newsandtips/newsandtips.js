@@ -1,11 +1,12 @@
 import { LightningElement ,track} from 'lwc';
 import FetchAllNewsData from '@salesforce/apex/AgricultureEmpowerment.FetchAllNewsData';
-
+import schemelist from '@salesforce/apex/AgricultureEmpowerment.schemelist';
 export default class Newsandtips extends LightningElement { 
 
 
     connectedCallback() {
         this.FetchNewsTipsData();
+        this.fetchschemsdata();
     }
 
 
@@ -23,5 +24,23 @@ export default class Newsandtips extends LightningElement {
             });
     }
     
+    
+
+
+    // all Schems
+
+    @track Storeschems;
+
+
+    fetchschemsdata() {
+        schemelist()
+        .then((result) => {
+            this.Storeschems = result;
+        }).catch((error) => {
+            alert(error.body.message);
+        });
+        
+    }
+
 
 }

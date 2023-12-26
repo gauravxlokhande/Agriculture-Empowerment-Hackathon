@@ -79,16 +79,17 @@
 
 /* Agriculture Tips */
 .agritips {
-    margin-top: 10px;
+    margin-top: 22px;
     margin-left: 10px;
     font-size: xx-large;
     font-family: 'Times New Roman', Times, serif;
     font: bolder;
+    color: black;
 }
 
 .container {
     flex-wrap: wrap;
-    margin: 20px auto;
+    margin-top: 10px;
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 8px;
@@ -106,6 +107,13 @@ h2 {
 
 p {
     color: #555;
+}
+
+/* all government schems */
+
+.data-containertwo{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 

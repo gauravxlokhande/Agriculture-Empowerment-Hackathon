@@ -96,6 +96,7 @@ export default class Home extends LightningElement {
 
 
 
+    @track DataNotfoundTemplate = false;
 
     // To Fetch The Agriculture Data 
     FetchAgricultureData() {
@@ -115,9 +116,12 @@ export default class Home extends LightningElement {
         })
             .then((response) => response.json())
             .then((data) => {
-                this.StoreAgricultureData = data.records
-                this.SpinnerTemplate = false;
-                console.log(this.StoreAgricultureData)
+                this.StoreAgricultureData = data.records;
+                if (data.records.length == 0) {
+                    this.DataNotfoundTemplate = true;
+                } else {
+                    this.DataNotfoundTemplate = false;
+                }
             }).catch(error => {
                 console.error('Error fetching data:', error);
             });

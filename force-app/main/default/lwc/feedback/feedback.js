@@ -9,27 +9,37 @@ export default class Feedback extends LightningElement {
     handleQueryChange(event){
         this.queryValue = event.target.value;
     }
-    handleSubmitClick() {
-        if (this.queryValue ==null) {
-            this.dispatchEvent(new ShowToastEvent({
-                title: "please enter the text",
-                variant: "error"
-            }));
-        } else {
-            insertFeedback({queryValue:this.queryValue})
-            .then(result=>{
-                console.log('result',result);
-                this.dispatchEvent(new ShowToastEvent({
-                    title: "Record Submitted Succesfully...",
-                    variant: "success"
-                }));
-                this.queryValue = '';
-            })
-            .catch(error=>{
-                console.log('error',error);
-            })
+    handleSubmitClick(){
+        console.log('enter')
+        let isValid = true;
+        this.template.querySelectorAll("lightning-textarea").forEach(item=>{
+            let fieldValue = item.value;
+            let fieldName = item.name;
+
+            let fieldError = 'Please Enter the';
+            if(!fieldValue){
+                isValid = false;
+                item.setCustomValidity(fieldError +" "+ fieldName);
+            }else{
+                item.setCustomValidity("");
+            }
+            item.reportValidity();
+        });
+        if(!isValid){
+            return;
         }
-       
+        insertFeedback({queryValue:this.queryValue})
+        .then(result=>{
+            console.log('result',result);
+            this.dispatchEvent(new ShowToastEvent({
+                title: "Record Submitted Succesfully...",
+                variant: "success"
+            }));
+            this.queryValue = '';
+        })
+        .catch(error=>{
+            console.log('error',error);
+        })
 
 
     }

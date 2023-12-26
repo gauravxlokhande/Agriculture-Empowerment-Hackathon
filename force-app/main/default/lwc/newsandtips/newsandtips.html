@@ -51,13 +51,43 @@
 
                     <!-- <br> -->
                     <p class="description" style="display:inline">{data.Description__c}</p>
-                    <lightning-formatted-url value={data.Website_url__c} label="Read More..."
+                    <lightning-formatted-url value={data.Website_url__c} label="read more..."
                         target={data.Website_url__c}></lightning-formatted-url>
                 </div>
 
             </div>
         </template>
     </div>
+
+
+    <!-- All Schems Information -->
+    <div class="data-containertwo">
+        <h2 style="font-weight: bolder; font-size:xx-large; font-family:'Times New Roman'; margin-left:10px; ">
+            Government Schemes</h2>
+        <h1
+            style="display: inline; font-weight:bold; font-size:small; font-family:'Times New Roman'; margin-left:10px; ">
+            <b>NOTE:</b> To See All Schems please Visit:-
+        </h1>
+        <lightning-formatted-url value="https://www.myscheme.gov.in/" tooltip="https://www.myscheme.gov.in/"
+            label="myscheme.gov.in" target="_blank"></lightning-formatted-url>
+
+        <template for:each={Storeschems} for:item="schems">
+            <div key={schems.id} class="data-item">
+                <div class="information">
+                    <div class="info">
+                        <b style="font-size: larger; color:rgb(32, 32, 179)">{schems.Name}</b>
+                        <lightning-formatted-date-time value={schems.Date__c} day="2-digit" month="2-digit"
+                            year="2-digit"></lightning-formatted-date-time>
+                    </div>
+                    <!-- <br> -->
+                    <p class="description" style="display:inline">{schems.Information__c}</p>
+                    <lightning-formatted-url value={schems.Read_More__c} label="read more..."></lightning-formatted-url>
+                </div>
+
+            </div>
+        </template>
+    </div>
+
 
 
 
