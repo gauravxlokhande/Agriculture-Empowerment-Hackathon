@@ -1,0 +1,232 @@
+<template>
+
+    <lightning-combobox class="language" label="Select Language" value={SelectLanguage} placeholder="Select Language"
+        options={options} onchange={handleChangeofLanguage}></lightning-combobox>
+
+    <div>
+        <div class="main-container">
+            <template if:true={DefaultTemplate}>
+                <h1 class="main-heading">Discover the Agricultural Adventure</h1>
+            </template>
+            <template if:true={DefaultTemplate}>
+                <p class="main-description">
+                    Welcome to the Farming, Climate, and Season-Wise Crop Planning Guide, designed to enhance your
+                    understanding of agricultural practices and empower you to make informed decisions for your farm.
+                    This guide covers essential aspects of farming, climate considerations, and recommendations for
+                    season-wise crop planning.
+                </p>
+            </template>
+            <template if:true={CustomeTemplate}>
+                <h1 class="main-heading">कृषि साहसिक कार्य की खोज करें</h1>
+            </template>
+            <template if:true={CustomeTemplate}>
+                <p>{storetrainingandsinfo}</p>
+            </template>
+        </div>
+
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">
+                    <template if:true={DefaultTemplate}>
+                        <h2>Section 1: <br> Basics of Farming</h2>
+                    </template>
+                    <template if:true={CustomeTemplate}>
+                        <h2>खंड 1: <br> खेती की मूल बातें</h2>
+                    </template>
+
+                </div>
+                <div class="card-body">
+                    <template if:true={DefaultTemplate}>
+                        <p>"Basics of Farming" section serves as a foundational module, providing users with fundamental
+                            knowledge about the different types of farming, the significance of soil health, and
+                            sustainable
+                            practices such as crop rotation and diversification. <br><br>
+                            To read in details click on <a
+                                href="https://wikifarmer.com/farming-101-how-to-be-a-farmer-step-by-step-guide/">More...</a>
+                        </p>
+                    </template>
+
+                    <template if:true={CustomeTemplate}>
+                        <p>"खेती की मूल बातें" अनुभाग एक मूलभूत मॉड्यूल के रूप में कार्य करता है, जो उपयोगकर्ताओं को
+                            मौलिक जानकारी प्रदान करता है
+                            विभिन्न प्रकार की खेती, मृदा स्वास्थ्य के महत्व और के बारे में ज्ञान
+                            टिकाऊ
+                            फसल चक्र और विविधीकरण जैसी प्रथाएँ।<br><br>
+                            विस्तार से पढ़ने के लिए क्लिक करें <a
+                                href="https://wikifarmer.com/farming-101-how-to-be-a-farmer-step-by-step-guide/">More...</a>
+                        </p>
+                    </template>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <template if:true={DefaultTemplate}>
+                        <h2>Section 2: <br> Climate and Its Impact on Farming</h2>
+                    </template>
+
+                    <template if:true={CustomeTemplate}>
+                        <h2>खंड 2: <br>जलवायु और खेती पर इसका प्रभाव</h2>
+                    </template>
+
+                </div>
+                <div class="card-body">
+                    <template if:true={DefaultTemplate}>
+                        <p> "Climate and Its Impact on Farming" section equips users with knowledge about the broader
+                            climate zones, the localized variations in microclimates, and the challenges posed by
+                            extreme
+                            weather events. <br><br>
+                            To read in details click on <a
+                                href="https://india.mongabay.com/2022/11/in-india-climate-impact-on-agriculture-is-already-a-reality-now/">More...</a>
+                        </p>
+                    </template>
+                    <template if:true={CustomeTemplate}>
+                        <p> "जलवायु और खेती पर इसका प्रभाव" अनुभाग उपयोगकर्ताओं को व्यापक ज्ञान से सुसज्जित करता है
+                            जलवायु क्षेत्र, माइक्रॉक्लाइमेट में स्थानीय विविधताएं, और इससे उत्पन्न चुनौतियाँ
+                            चरम
+                            मौसम की घटनाएँ.<br><br>
+                            विस्तार से पढ़ने के लिए क्लिक करें <a
+                                href="https://india.mongabay.com/2022/11/in-india-climate-impact-on-agriculture-is-already-a-reality-now/">More...</a>
+                        </p>
+                    </template>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <template if:true={DefaultTemplate}>
+                        <h2>Section 3: <br> Season-Wise Crop Planning</h2>
+                    </template>
+
+                    <template if:true={CustomeTemplate}>
+                        <h2>खंड 3: <br> मौसम के अनुसार फसल योजना</h2>
+                    </template>
+                </div>
+                <div class="card-body">
+                    <template if:true={DefaultTemplate}>
+                        <p>The "Season-Wise Crop Planning" section equips with the knowledge and tools needed to plan
+                            their
+                            crop cultivation effectively throughout the year. By integrating the insights gained from
+                            this
+                            section with the features of the Salesforce application, farmers can optimize their farming
+                            practices and enhance overall productivity.
+                            <br>
+                            To read in details click on <a
+                                href="https://testbook.com/ias-preparation/cropping-seasons-in-india">More...</a>
+                        </p>
+                    </template>
+
+
+                    <template if:true={CustomeTemplate}>
+                        <p>"मौसम-वार फसल योजना" अनुभाग योजना बनाने के लिए आवश्यक ज्ञान और उपकरणों से सुसज्जित है
+                            उनका
+                            वर्ष भर प्रभावी ढंग से फसल की खेती। से प्राप्त अंतर्दृष्टि को एकीकृत करके
+                            यह
+                            सेल्सफोर्स एप्लिकेशन की विशेषताओं के साथ अनुभाग, किसान अपनी खेती को अनुकूलित कर सकते हैं
+                            अभ्यास और समग्र उत्पादकता में वृद्धि।
+                            <br>
+                            विस्तार से पढ़ने के लिए क्लिक करें <a
+                                href="https://testbook.com/ias-preparation/cropping-seasons-in-india">More...</a>
+                        </p>
+
+                    </template>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <template if:true={DefaultTemplate}>
+                        <h2>Section 4: <br> Crop Rotation and Diversification</h2>
+                    </template>
+                    <template if:true={CustomeTemplate}>
+                        <h2>खंड 4: <br> फसल चक्रण और विविधीकरण</h2>
+                    </template>
+                </div>
+                <div class="card-body">
+                    <template if:true={DefaultTemplate}>
+                        <p>The "Crop Rotation and Diversification" section equips farmers with knowledge and strategies
+                            to
+                            implement sustainable practices in their farming operations. By integrating these principles
+                            into their cultivation plans, farmers can enhance soil fertility, manage pests effectively,
+                            and
+                            build a resilient and diverse agricultural system.
+                            <br>
+                            To read in details click on <a href="https://eos.com/blog/crop-rotation/">More...</a>
+                        </p>
+                    </template>
+                    <template if:true={CustomeTemplate}>
+                        <p>"फसल चक्रण और विविधीकरण" अनुभाग किसानों को ज्ञान और रणनीतियों से सुसज्जित करता है
+                            को
+                            अपने कृषि कार्यों में टिकाऊ प्रथाओं को लागू करें। इन सिद्धांतों को एकीकृत करके
+                            किसान अपनी खेती की योजनाओं में मिट्टी की उर्वरता बढ़ा सकते हैं, कीटों का प्रभावी ढंग से
+                            प्रबंधन कर सकते हैं,
+                            और
+                            एक लचीली और विविध कृषि प्रणाली का निर्माण करें।
+                            <br>
+                            विस्तार से पढ़ने के लिए क्लिक करें<a href="https://eos.com/blog/crop-rotation/">More...</a>
+                        </p>
+
+                    </template>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show Map  -->
+    <!--show-footer -->
+    <div class="map">
+        <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel} list-view={listView}>
+        </lightning-map>
+    </div>
+
+    <template if:true={DefaultTemplate}>
+        <h1 class="YTheading">Insightful Farming Practices</h1>
+    </template>
+
+    <template if:true={CustomeTemplate}>
+        <h1 class="YTheading">ज्ञानवर्धक कृषि पद्धतियाँ</h1>
+    </template>
+    <div class="video-grid">
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hgHA2-SARPg?si=SmA1_MR1VuCamSWI"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/g0wkT3mf80U?si=9m8s92Cr5iyXbIp9"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FyOzeO6fQwI?si=Jz00K74D_B8n-ym4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9JHcffpFcmw?si=jVfsW1WtR3T9JxYT"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BmeFVjnALuQ?si=UhMj2RnZWobbsZAj"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eLACnABG2LM?si=y0rTdZr2xbRVjJ3h"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MIMNRLK804o?si=dDG3oWt02Vf_pPeP"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</template>

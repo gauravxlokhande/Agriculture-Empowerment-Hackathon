@@ -1,7 +1,8 @@
-.main {
-    background: #f5f5f5;
-    padding: 10px;
+.language{
+    display: flex;
+    justify-content: right;
 }
+
 
 .main-container {
     text-align: center;
@@ -47,28 +48,30 @@
 .data-item {
     width: 220px;
     height: 220px;
-
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 10px;
-    background-color: rgb(212, 239, 2021);
+    background-color: rgba(51, 63, 67, 0.85);
     border-radius: 5px;
+    color: white;
 }
 
 .location {
     font-size: 18px;
-    color: #333;
+    color: white;
 }
 
 .views-section {
-    background-color: #d3bebec6;
+    background-color:rgba(23, 37, 42, 0.85);
     padding: 20px;
     border-radius: 5px;
     flex: 0 0 40%;
     height: 100%;
-
 }
 
+.white{
+    color: white;
+}
 .text-area {
     width: 100%;
     margin-bottom: 10px;
@@ -77,6 +80,7 @@
 .public-views {
     font-size: 16px;
     margin-top: 20px;
+    color: white;
 }
 
 .public-view-item {

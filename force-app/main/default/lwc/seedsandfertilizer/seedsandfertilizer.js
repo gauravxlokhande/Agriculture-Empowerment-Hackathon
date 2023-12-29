@@ -2,6 +2,7 @@ import { LightningElement,track} from 'lwc';
 import HeaderSeedsAndFertilizer from '@salesforce/resourceUrl/SeedsandFertilizers';
 import FetchAllFertilizers from '@salesforce/apex/AgricultureEmpowerment.FetchAllFertilizers';
 import FetchAllSeeds from '@salesforce/apex/AgricultureEmpowerment.FetchAllSeeds';
+import GetAllTranslation from '@salesforce/apex/TranslateLanguageAgri.GetAllTranslation';
 
 
 export default class Seedsandfertilizer extends LightningElement { 
@@ -11,6 +12,7 @@ export default class Seedsandfertilizer extends LightningElement {
         this.FetchAllFertilizerData();
     }
 
+    @track DefaultTemplate = true;
 
     @track HeaderSeedsAndFertilizer = HeaderSeedsAndFertilizer;
     @track StoreAllSeedsData = [];
@@ -40,5 +42,37 @@ export default class Seedsandfertilizer extends LightningElement {
     }
 
 
+    // change language
+
+     get options() {
+        return [
+            { label: 'English', value: 'english' },
+            { label: 'Hindi', value: 'hi' },
+        ];
+    }
+
+
+    @track storeseedsinfo;
+    @track CustomeTemplate = false;
+
+
+    handleChangeofLanguage(event) {
+        this.DefaultTemplate = false;
+        this.CustomeTemplate = true;
+
+        const SelectLanguage = event.target.value;
+        
+        if (SelectLanguage == 'hi') {
+            GetAllTranslation({labelName:'S_FInformation', language:'hi'})
+                .then((result) => {
+                    this.storeseedsinfo = result;   
+            }).catch((error) => {
+                
+            });
+        } else {
+            this.DefaultTemplate = true;
+            this.CustomeTemplate = false;
+        }
+    }
 
 }

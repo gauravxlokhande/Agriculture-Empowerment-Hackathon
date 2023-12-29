@@ -1,7 +1,7 @@
 import { LightningElement, track } from 'lwc';
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import SunnyWeather from '@salesforce/resourceUrl/WeatherApiSunny';
-import FetchWeatherData from '@salesforce/apex/AgricultureEmpowerment.GetWeatherData';
+import GetAllTranslation from '@salesforce/apex/TranslateLanguageAgri.GetAllTranslation';
+
 
 
 
@@ -10,6 +10,10 @@ export default class Home extends LightningElement {
     connectedCallback() {
         this.handleCurrentLocation();
     }
+
+    //defaulttemplate
+    @track DefaultTemplate = true;
+
 
     // Weather image
     @track SunnyWeather = SunnyWeather;
@@ -52,7 +56,7 @@ export default class Home extends LightningElement {
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude
                     };
-                    console.log('Current Location:', currentLocation);
+                    // console.log('Current Location:', currentLocation);
 
                     let endPoint = `https://api.weatherapi.com/v1/current.json?key=6388b321ff7a4f239de125943230612&q=${currentLocation.latitude},${currentLocation.longitude}`;
 
@@ -61,11 +65,11 @@ export default class Home extends LightningElement {
                     })
                         .then((response) => response.json())
                         .then((data) => {
-                            console.log('Weather data:', data);
+                            //console.log('Weather data:', data);
                             this.result = data;
                             this.imageURL = this.result.current.condition.icon;
                             this.date = this.result.location.localtime;
-                            console.log('image',this.imageURL);
+                            //console.log('image',this.imageURL);
 
                         })
                         .catch((error) => {
@@ -103,7 +107,7 @@ export default class Home extends LightningElement {
         const month = today.getMonth() + 1;
         const year = today.getFullYear();
         const formattedDate = `${day}/${month}/${year}`;
-        console.log(formattedDate);
+        // console.log(formattedDate);
 
 
         let endPoint = `https://api.data.gov.in/catalog/6141ea17-a69d-4713-b600-0a43c8fd9a6c?api-key=579b464db66ec23bdd000001be46e8b8b04c4b746f8c908419d2c4e3&format=json&limit=1000&filters%5Bdistrict%5D=${this.selectedLocation}&filters%5Barrival_date%5D=${formattedDate}`;
@@ -122,6 +126,41 @@ export default class Home extends LightningElement {
                 console.error('Error fetching data:', error);
             });
 
+    }
+
+
+
+
+    // language translation
+     get options() {
+        return [
+            { label: 'English', value: 'english' },
+            { label: 'Hindi', value: 'hi' },
+        ];
+    }
+
+
+    @track storemarketdescription;
+    @track CustomeTemplate = false;
+
+
+    handleChangeofLanguage(event) {
+        this.DefaultTemplate = false;
+        this.CustomeTemplate = true;
+
+        const SelectLanguage = event.target.value;
+        
+        if (SelectLanguage == 'hi') {
+            GetAllTranslation({labelName:'Market_Descripton', language:'hi'})
+                .then((result) => {
+                    this.storemarketdescription = result;   
+            }).catch((error) => {
+                
+            });
+        } else {
+            this.DefaultTemplate = true;
+            this.CustomeTemplate = false;
+        }
     }
 
 

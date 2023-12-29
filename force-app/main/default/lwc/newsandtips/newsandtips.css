@@ -48,7 +48,7 @@
 }
 
 .data-item {
-    background-color: whitesmoke;
+    background-color: rgb(231, 221, 221);
     border-top: black 1px dotted;
     border-bottom: black 1px dotted;
     padding: 7px;
@@ -91,7 +91,7 @@
     flex-wrap: wrap;
     margin-top: 10px;
     padding: 20px;
-    background-color: whitesmoke;
+    background-color: rgb(231, 221, 221);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -110,6 +110,11 @@ p {
 }
 
 /* all government schems */
+
+.language{
+    display: flex;
+    justify-content: right;
+}
 
 .data-containertwo{
     margin-top: 20px;

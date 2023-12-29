@@ -32,7 +32,7 @@ export default class Feedback extends LightningElement {
         .then(result=>{
             console.log('result',result);
             this.dispatchEvent(new ShowToastEvent({
-                title: "Record Submitted Succesfully...",
+                title: "Your Feedback submitted successfull, Thank You!",
                 variant: "success"
             }));
             this.queryValue = '';
@@ -41,6 +41,32 @@ export default class Feedback extends LightningElement {
             console.log('error',error);
         })
 
-
     }
+
+    // change language
+    get options() {
+        return [
+            { label: 'English', value: 'english' },
+            { label: 'Hindi', value: 'hi' },
+        ];
+    }
+
+
+    @track DefaultTemplate = true;
+    @track CustomeTemplate = false;
+
+
+    handleChangeofLanguage(event) {
+        const valueee = event.target.value;
+        if (valueee =='hi') {
+            this.DefaultTemplate = false;
+            this.CustomeTemplate = true;
+        } else {
+            this.DefaultTemplate = true;
+            this.CustomeTemplate = false;
+        }
+       
+    }
+
+
 }

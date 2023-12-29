@@ -1,97 +1,131 @@
 <template>
-    <div class="main">
 
-        <div class="main-container">
+    <lightning-combobox class="language" label="Select Language" value={SelectLanguage} placeholder="Select Language"
+        options={optionss} onchange={handleChangeofLanguage}></lightning-combobox>
+
+
+    <div class="main-container">
+        <template if:true={DefaultTemplate}>
             <h1 class="main-heading">"Smart Farming Starts Here: Market Insights for Success"</h1>
             <p class="main-description">
                 Welcome to the Market Trends page, your gateway to a wealth of insights that can revolutionize your
-                farming strategy. Stay ahead of the curve by delving into historical data and understanding the dynamic
+                farming strategy. Stay ahead of the curve by delving into historical data and understanding the
+                dynamic
                 shifts in crop prices.
             </p>
-        </div>
+        </template>
+        <template if:true={CustomeTemplate}>
+            <h1 class="main-heading">"स्मार्ट खेती यहां से शुरू होती है: सफलता के लिए बाजार अंतर्दृष्टि"</h1>
+            <p class="main-description">{storemarketdescription}</p>
+        </template>
+    </div>
 
-        <!-- Seasonal Calendar - Start -->
+    <!-- Seasonal Calendar - Start -->
+    <template if:true={DefaultTemplate}>
         <h1 style="text-align: center;" class="main-description">Seasonal Calendar</h1>
-        <div class="slds-scrollable_y" style="height:10rem;width:100%" tabindex="0">
-            <div class="custom-card">
-                <template if:true={seasonalItems}>
-                    <lightning-datatable key-field="Id" data={seasonalItems} columns={columns} hide-checkbox-column
-                        class="custom-datatable" default-sort-direction="asc" sorted-direction={sortDirection}
-                        sorted-by={sortedBy} onsort={handleSort}></lightning-datatable>
-                </template>
-                <template if:false={seasonalItems}>
-                    <div class="slds-text-align_center slds-p-vertical_medium custom-no-data-message">
-                        No seasonal data available.
-                    </div>
-                </template>
-            </div>
+    </template>
+    <template if:true={CustomeTemplate}>
+        <h1 style="text-align: center;" class="main-description">मौसमी कैलेंडर</h1>
+    </template>
+
+    <div class="slds-scrollable_y" style="height:10rem;width:100%" tabindex="0">
+        <div class="custom-card">
+            <template if:true={seasonalItems}>
+                <lightning-datatable key-field="Id" data={seasonalItems} columns={columns} hide-checkbox-column
+                    class="custom-datatable" default-sort-direction="asc" sorted-direction={sortDirection}
+                    sorted-by={sortedBy} onsort={handleSort}></lightning-datatable>
+            </template>
+            <template if:false={seasonalItems}>
+                <div class="slds-text-align_center slds-p-vertical_medium custom-no-data-message">
+                    No seasonal data available.
+                </div>
+            </template>
         </div>
+    </div>
 
 
-        <!-- Seasonal Calendar - End -->
+    <!-- Seasonal Calendar - End -->
 
 
-        <lightning-layout class="container">
-            <lightning-layout-item size="8" class="market-data">
+    <lightning-layout class="container">
+        <lightning-layout-item size="8" class="market-data">
+
+            <template if:true={DefaultTemplate}>
                 <h1 style="text-align: center;" class="main-description">View Historical Data By Selecting Your City
                 </h1>
+            </template>
 
-                <div class="dropdowns">
-                    <div class="cityDropDown">
-                        <lightning-combobox name="city" label="City" value={searchValue} placeholder="Select a City"
-                            options={options} onchange={handleCityChange}></lightning-combobox>
-                    </div>
-                    <div class="commodityDropDown">
-                        <lightning-combobox name="city" label="Commodity" value={commodityValue}
-                            placeholder="Select a Commodity" options={commodity}
-                            onchange={handleCommodityChange}></lightning-combobox>
-                    </div>
+            <template if:true={CustomeTemplate}>
+                <h1 style="text-align: center;" class="main-description">अपने शहर का चयन करके ऐतिहासिक डेटा देखें
+                </h1>
+            </template>
+
+            <div class="dropdowns">
+                <div class="cityDropDown">
+                    <lightning-combobox name="city" label="City" value={searchValue} placeholder="Select a City"
+                        options={options} onchange={handleCityChange}></lightning-combobox>
                 </div>
-
-
-                <div class="data-container">
-                    <template if:true={showMarketData}>
-                        <template for:each={agriData} for:item="marketItem">
-                            <div class="data-item" key={marketItem.id}>
-                                <p class="location">{marketItem.state}, {marketItem.district}, {marketItem.market}</p>
-                                <p><b>Commodity:</b> {marketItem.commodity}</p>
-                                <p><b>Arrival Date:</b> {marketItem.arrival_date}</p>
-                                <p><b>Min Price:</b> {marketItem.min_price}</p>
-                                <p><b>Max Price:</b> {marketItem.max_price}</p>
-                                <p><b>Modal Price:</b> {marketItem.modal_price}</p>
-                            </div>
-                        </template>
-                    </template>
-
+                <div class="commodityDropDown">
+                    <lightning-combobox name="city" label="Commodity" value={commodityValue}
+                        placeholder="Select a Commodity" options={commodity}
+                        onchange={handleCommodityChange}></lightning-combobox>
                 </div>
+            </div>
 
-            </lightning-layout-item>
 
-
-            <lightning-layout-item size="4" class="views-section">
-                <h1>Share your insights and experiences related to market trends</h1>
-
-                <lightning-textarea name="city" placeholder="Share your views..." value={viewValue}
-                    onchange={handleViewChange} variant="standard" class="text-area"></lightning-textarea>
-
-                <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
-                    onclick={handleSubmitClick}></lightning-button>
-
-                <p class="public-views">Community Perspectives: <br></p>
-                <template for:each={viewsData} for:item="vd">
-
-                    <div key={vd.Id} class="public-view-item">
-                        <p style="color: #34495e;">{vd.Submission_Date__c}</p>
-
-                        <div>
-                            <p>{vd.View__c}</p>
+            <div class="data-container">
+                <template if:true={showMarketData}>
+                    <template for:each={agriData} for:item="marketItem">
+                        <div class="data-item" key={marketItem.id}>
+                            <p class="location">{marketItem.state}, {marketItem.district}, {marketItem.market}</p>
+                            <p><b>Commodity:</b> {marketItem.commodity}</p>
+                            <p><b>Arrival Date:</b> {marketItem.arrival_date}</p>
+                            <p><b>Min Price:</b> {marketItem.min_price}</p>
+                            <p><b>Max Price:</b> {marketItem.max_price}</p>
+                            <p><b>Modal Price:</b> {marketItem.modal_price}</p>
                         </div>
-                    </div>
+                    </template>
                 </template>
-            </lightning-layout-item>
 
-        </lightning-layout>
-    </div>
+            </div>
+
+        </lightning-layout-item>
+
+
+        <lightning-layout-item size="4" class="views-section">
+            <template if:true={DefaultTemplate}>
+                <h1 class="white">Share your insights and experiences related to market trends</h1>
+            </template>
+
+            <template if:true={CustomeTemplate}>
+                <h1 class="white">बाज़ार के रुझानों से संबंधित अपनी अंतर्दृष्टि और अनुभव साझा करें</h1>
+            </template>
+
+            <lightning-textarea name="city" placeholder="Share your views..." value={viewValue}
+                onchange={handleViewChange} variant="standard" class="text-area"></lightning-textarea>
+
+            <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
+                onclick={handleSubmitClick}></lightning-button>
+            <template if:true={DefaultTemplate}>
+                <p class="public-views">Community Perspectives: <br></p>
+            </template>
+            <template if:true={CustomeTemplate}>
+                <p class="public-views">सामुदायिक परिप्रेक्ष्य: <br></p>
+            </template>
+
+            <template for:each={viewsData} for:item="vd">
+
+                <div key={vd.Id} class="public-view-item">
+                    <p style="color: #34495e;">{vd.Submission_Date__c}</p>
+
+                    <div>
+                        <p>{vd.View__c}</p>
+                    </div>
+                </div>
+            </template>
+        </lightning-layout-item>
+
+    </lightning-layout>
 
 
 

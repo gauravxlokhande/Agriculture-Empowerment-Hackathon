@@ -1,0 +1,40 @@
+<template>
+    <div class="main">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="5" medium-device-size="5" large-device-size="5"
+                padding="horizontal-small">
+                <div class="custom-box">
+                    <b>Developed By: </b>
+                    <div class="name">
+                        <h1>Gaurav Lokhande</h1>
+                        <h1>Mihir Dhore</h1>
+                        <h1> for @ImpactHackathon</h1>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="7" medium-device-size="7" large-device-size="7"
+                padding="horizontal-small">
+                <div class="custom-box">
+                    <b>Contact: </b>
+                    <lightning-formatted-address street="Prathm Circle, Gelleria Street Green City Road"
+                        city="Pal, Adajan, Surat" country="India" province="Gujrat, India"
+                        postal-code="3595009"></lightning-formatted-address>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="websitelogo">
+            <div class="website">
+                <lightning-icon icon-name='action:web_link' alternative-text='web_link' size='x-small'
+                    title='web_link'></lightning-icon>
+                <a
+                    href="https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment">www.agriempowerment.in</a>
+            </div>
+
+            <div class="instalinkedin">
+                <img src={InstaLogoPng} alt="Instagram" onclick={onclickofinsta}>
+                <img src={linkedinLogoPng} alt="Linkedin" onclick={onclickoflinkedin}>
+            </div>
+        </div>
+
+    </div>
+</template>

@@ -1,7 +1,9 @@
 import { LightningElement, track } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import insertViews from '@salesforce/apex/AgricultureEmpowerment.insertViews';
 import showViews from '@salesforce/apex/AgricultureEmpowerment.showViews';
 import FetchSeasonalCalendarData from '@salesforce/apex/AgricultureEmpowerment.FetchSeasonalCalendarData';
+import GetAllTranslation from '@salesforce/apex/TranslateLanguageAgri.GetAllTranslation';
 
 const columns = [
     { label: 'Crop Name', fieldName: 'cropName' },
@@ -108,23 +110,37 @@ export default class MarketTrends extends LightningElement {
         this.viewValue = event.target.value;
     }
     handleSubmitClick() {
-        insertViews({ view: this.viewValue })
+        if (this.viewValue ==null) {
+            this.dispatchEvent(new ShowToastEvent({
+                title: "You cannot submit the empty text",
+                variant: "warning"
+            }));
+        } else {
+            insertViews({ view: this.viewValue })
             .then(result => {
                 console.log(result)
                 this.showViews();
                 this.viewValue = '';
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Your Openion submited successfully",
+                    variant: "success"
+                }));
 
             }).catch(error => {
 
             })
+        }
+       
     }
 
     //to Show Views
     @track viewsData;
+
     connectedCallback() {
         this.showViews();
         this.fetchseasondata();
     }
+
     showViews() {
         showViews()
             .then(result => {
@@ -134,7 +150,7 @@ export default class MarketTrends extends LightningElement {
     }
 
     //For Seasonal Calendar
-    seasonalItems;
+    @track seasonalItems='';
     @track columns = columns;
     sortDirection = 'asc';
     sortedBy;
@@ -143,15 +159,51 @@ export default class MarketTrends extends LightningElement {
         await FetchSeasonalCalendarData()
             .then(result => {
                 console.log('result', result);
-                this.seasonalItems = result.map(record => ({
-                    ...record,
-                    cropName: record.Seeds__r.Name,
-                }));
-                console.log(this.seasonalItems);
+                this.seasonalItems = result;
+                // this.seasonalItems = result.map(record => ({
+                //     ...record,
+                //     cropName: record.Seeds__r.Name,
+                // }));
+                // console.log(this.seasonalItems);
             })
             .catch(error => {
                 console.log('error', error);
             })
     }
+
+
+    //change language
+
+    get optionss() {
+        return [
+            { label: 'English', value: 'english' },
+            { label: 'Hindi', value: 'hi' },
+        ];
+    }
+
+
+    @track storemarketdescription;
+    @track CustomeTemplate = false;
+    @track DefaultTemplate = true;
+
+    handleChangeofLanguage(event) {
+        this.DefaultTemplate = false;
+        this.CustomeTemplate = true;
+
+        const SelectLanguage = event.target.value;
+        
+        if (SelectLanguage == 'hi') {
+            GetAllTranslation({labelName:'MntDescription', language:'hi'})
+                .then((result) => {
+                    this.storemarketdescription = result;   
+            }).catch((error) => {
+                
+            });
+        } else {
+            this.DefaultTemplate = true;
+            this.CustomeTemplate = false;
+        }
+    }
+
 
 }

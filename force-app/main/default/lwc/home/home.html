@@ -1,7 +1,19 @@
 <template>
 
-    <marquee style="font-weight: bolder;" behavior="" direction="right">WELCOME TO THE AGRICULTURE EMPOWERMENT SITE
-    </marquee>
+    <!-- marquee effect -->
+    <template if:true={DefaultTemplate}>
+        <marquee style="font-weight: bolder;" behavior="" direction="right">WELCOME TO THE AGRICULTURE EMPOWERMENT SITE
+        </marquee>
+    </template>
+    <template if:true={CustomeTemplate}>
+        <marquee style="font-weight: bolder;" behavior="" direction="right">कृषि अधिकारिता स्थल पर आपका स्वागत है
+        </marquee>
+    </template>
+
+    <!-- Select language -->
+    <lightning-combobox class="language" label="Select Language" value={SelectLanguage} placeholder="Select Language"
+        options={options} onchange={handleChangeofLanguage}></lightning-combobox>
+
 
     <div class="card">
         <!-- Weather Data -->
@@ -27,17 +39,25 @@
     </div>
 
     <!-- City Market Insights -->
-    <h1 class="heading">City Market Insights</h1>
-    <p class="main-description">
-        City Market Insights provides a comprehensive overview of local agricultural markets, offering
-        you a detailed glimpse into the dynamics of each city's agricultural landscape. Explore real-time
-        data on commodities, arrival dates, pricing trends, and more. Gain valuable insights to make
-        informed decisions in the ever-evolving world of agriculture. Whether you're a farmer, trader, or
-        enthusiast, City Market Insights equips you with the knowledge needed to navigate and thrive in your city's
-        agricultural markets. <br> <br>
-        Select Your City to Know More About Market!
-    </p>
 
+    <template if:true={DefaultTemplate}>
+        <h1 class="heading">City Market Insights</h1>
+    </template>
+    <template if:true={DefaultTemplate}>
+        <p class="main-description">
+            City Market Insights provides a comprehensive overview of local agricultural markets, offering
+            you a detailed glimpse into the dynamics of each city's agricultural landscape. Explore real-time
+            data on commodities, arrival dates, pricing trends, and more. Gain valuable insights to make
+            informed decisions in the ever-evolving world of agriculture. Whether you're a farmer, trader, or
+            enthusiast, City Market Insights equips you with the knowledge needed to navigate and thrive in your city's
+            agricultural markets. <br> <br>
+            Select Your City to Know More About Market!
+        </p>
+    </template>
+    <template if:true={CustomeTemplate}>
+        <h1 class="heading">सिटी मार्केट इनसाइट्स</h1>
+        <p class="main-description">{storemarketdescription}</p>
+    </template>
 
 
     <!-- Picklist To Select City -->
@@ -64,13 +84,24 @@
     </div>
 
     <template if:true={DataNotfoundTemplate}>
-        <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
-            Market will be opening soon
-        </h1>
-        <h2 style="display: flex; justify-content:center; "><b>Note: </b> It's a live market data show it is
-            visible when market opens.</h2>
+
+        <template if:true={DefaultTemplate}>
+            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
+                Market will be opening soon
+            </h1>
+            <h2 style="display: flex; justify-content:center; "><b>Note: </b> It's a live market data show it is
+                visible when market opens.</h2>
+        </template>
+
+        <template if:true={CustomeTemplate}>
+            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
+                जल्द ही बाजार खुलने वाला है
+            </h1>
+            <h2 style="display: flex; justify-content:center; "><b>
+                    टिप्पणी: </b> यह एक लाइव मार्केट डेटा है
+                बाज़ार खुलने पर दिखाई देता है.</h2>
+        </template>
+
     </template>
-
-
 
 </template>

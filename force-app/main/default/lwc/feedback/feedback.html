@@ -1,19 +1,30 @@
 <template>
-    <div class="main">
-        <div class="image-container">
-            <div class="img">
-                <img src={feedbackimage} alt="seeds">
-            </div>
-            <div class="content-overlay">
-                <div class="content">
-                    <h1 class="heading">Share your queries/Feedback</h1>
-                    <lightning-textarea name="Description" placeholder="Share your query..." value={queryValue}
-                        onchange={handleQueryChange} variant="standard" class="text-area"></lightning-textarea>
 
-                    <div class="button">
-                        <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
-                            onclick={handleSubmitClick}></lightning-button>
-                    </div>
+    <lightning-combobox class="language" label="Select Language" value={SelectLanguage} placeholder="Select Language"
+        options={options} onchange={handleChangeofLanguage}></lightning-combobox>
+
+
+
+
+    <div class="image-container">
+        <div class="img">
+            <img src={feedbackimage} alt="seeds">
+        </div>
+        <div class="content-overlay">
+            <div class="content">
+                <template if:true={DefaultTemplate}>
+                    <h1 class="heading">Share your queries/Feedback</h1>
+                </template>
+                <template if:true={CustomeTemplate}>
+                    <h1 class="heading">अपने प्रश्न/प्रतिक्रिया साझा करें</h1>
+                </template>
+
+                <lightning-textarea name="Description" placeholder="Share your query..." value={queryValue}
+                    onchange={handleQueryChange} variant="standard" class="text-area"></lightning-textarea>
+
+                <div class="button">
+                    <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
+                        onclick={handleSubmitClick}></lightning-button>
                 </div>
             </div>
         </div>
