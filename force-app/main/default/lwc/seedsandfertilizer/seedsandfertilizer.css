@@ -68,7 +68,7 @@
     margin: 20px;
     color: black;
     background-color: rgba(138, 187, 139, 0.85);
-    border: 2px solid rgb(98, 89, 89);
+    border: 1px solid rgb(98, 89, 89);
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
