@@ -6,40 +6,40 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class Feedback extends LightningElement {
     feedbackimage = feedbackimage;
     @track queryValue;
-    handleQueryChange(event){
+    handleQueryChange(event) {
         this.queryValue = event.target.value;
     }
-    handleSubmitClick(){
+    handleSubmitClick() {
         console.log('enter')
         let isValid = true;
-        this.template.querySelectorAll("lightning-textarea").forEach(item=>{
+        this.template.querySelectorAll("lightning-textarea").forEach(item => {
             let fieldValue = item.value;
             let fieldName = item.name;
 
             let fieldError = 'Please Enter the';
-            if(!fieldValue){
+            if (!fieldValue) {
                 isValid = false;
-                item.setCustomValidity(fieldError +" "+ fieldName);
-            }else{
+                item.setCustomValidity(fieldError + " " + fieldName);
+            } else {
                 item.setCustomValidity("");
             }
             item.reportValidity();
         });
-        if(!isValid){
+        if (!isValid) {
             return;
         }
-        insertFeedback({queryValue:this.queryValue})
-        .then(result=>{
-            console.log('result',result);
-            this.dispatchEvent(new ShowToastEvent({
-                title: "Your Feedback submitted successfull, Thank You!",
-                variant: "success"
-            }));
-            this.queryValue = '';
-        })
-        .catch(error=>{
-            console.log('error',error);
-        })
+        insertFeedback({ queryValue: this.queryValue })
+            .then(result => {
+                console.log('result', result);
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Your Feedback submitted successfull, Thank You!",
+                    variant: "success"
+                }));
+                this.queryValue = '';
+            })
+            .catch(error => {
+                console.log('error', error);
+            })
 
     }
 
@@ -58,14 +58,14 @@ export default class Feedback extends LightningElement {
 
     handleChangeofLanguage(event) {
         const valueee = event.target.value;
-        if (valueee =='hi') {
+        if (valueee == 'hi') {
             this.DefaultTemplate = false;
             this.CustomeTemplate = true;
         } else {
             this.DefaultTemplate = true;
             this.CustomeTemplate = false;
         }
-       
+
     }
 
 

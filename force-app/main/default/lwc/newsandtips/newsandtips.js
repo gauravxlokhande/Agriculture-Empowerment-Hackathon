@@ -83,12 +83,12 @@ export default class Newsandtips extends LightningElement {
     handleChangeofLanguage(event) {
         const SelectedLanguage = event.detail.value;
 
-         this.CustomeTemplate = true;
-         this.DefaultTemplate = false;
- 
-        if (SelectedLanguage =='hindi') {
-            
-       
+        this.CustomeTemplate = true;
+        this.DefaultTemplate = false;
+
+        if (SelectedLanguage == 'hindi') {
+
+
             GetAllTranslation({ labelName: 'newsInformation', language: 'hi' })
                 .then((result) => {
                     this.storenewsinformation = result;
@@ -132,8 +132,8 @@ export default class Newsandtips extends LightningElement {
         } else {
             this.CustomeTemplate = false;
             this.DefaultTemplate = true;
-            }
-       
+        }
+
     }
 
 

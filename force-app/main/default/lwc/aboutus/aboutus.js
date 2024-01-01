@@ -3,7 +3,7 @@ import { NavigationMixin } from 'lightning/navigation';
 import InstaLogoPng from '@salesforce/resourceUrl/InstaLogoPng';
 import linkedinLogoPng from '@salesforce/resourceUrl/linkedinLogoPng';
 
-export default class Aboutus extends NavigationMixin (LightningElement) {
+export default class Aboutus extends NavigationMixin(LightningElement) {
 
 
     @track InstaLogoPng = InstaLogoPng;
@@ -14,7 +14,7 @@ export default class Aboutus extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://www.salesforce.com/trailblazer/mdhore1"
+                url: "https://www.salesforce.com/trailblazer/mdhore1"
             }
         });
     }
@@ -23,7 +23,7 @@ export default class Aboutus extends NavigationMixin (LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-               url: "https://www.salesforce.com/trailblazer/gauravlokhande"
+                url: "https://www.salesforce.com/trailblazer/gauravlokhande"
             }
         });
     }

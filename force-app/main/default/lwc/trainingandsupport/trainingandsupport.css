@@ -1,4 +1,4 @@
-.language{
+.language {
     display: flex;
     justify-content: right;
 }
@@ -11,20 +11,23 @@
 
 .main-heading {
     font-size: 36px;
-    color: #2c3e50; /* Dark blue color */
+    color: #2c3e50;
+    /* Dark blue color */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .main-description {
     font-size: 18px;
-    color: #34495e; /* Dark gray color */
+    color: #34495e;
+    /* Dark gray color */
     line-height: 1.5;
 }
 
-.YTheading{
+.YTheading {
     font-size: 30px;
-    color: #2c3e50; /* Dark blue color */
+    color: #2c3e50;
+    /* Dark blue color */
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
@@ -37,22 +40,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
-  }
-  
-  .video-item {
+}
+
+.video-item {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     /* overflow: hidden; */
-  }
-  
-  .video-item iframe {
+}
+
+.video-item iframe {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-  }
-  
+}
+
 
 .card-container {
     display: flex;
@@ -64,7 +68,7 @@
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    flex: 1;  
+    flex: 1;
     background-color: rgba(23, 37, 42, 0.85);
 
 }
@@ -90,7 +94,7 @@
 lightning-map {
     width: 100%;
     height: 100%;
-    border: none; 
+    border: none;
 }
 
 .lightning-map-marker-popup {
@@ -101,20 +105,21 @@ lightning-map {
 }
 
 .lightning-map-base-icon {
-    color: #3366cc; 
-    font-size: 24px; 
+    color: #3366cc;
+    font-size: 24px;
 }
 
 @media (max-width: 768px) {
     .card {
-        font-size:medium;
+        font-size: medium;
     }
-         .card-container {
-             flex-direction: column;
-             align-items: center;
-         }
-    
-         .card {
-             margin-bottom: 20px;
-         }    
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
 }

@@ -111,12 +111,12 @@ p {
 
 /* all government schems */
 
-.language{
+.language {
     display: flex;
     justify-content: right;
 }
 
-.data-containertwo{
+.data-containertwo {
     margin-top: 20px;
     margin-bottom: 20px;
 }

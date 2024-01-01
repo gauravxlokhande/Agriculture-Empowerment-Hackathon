@@ -1,5 +1,4 @@
-
-.language{
+.language {
     display: flex;
     justify-content: right;
     margin-bottom: 6px;
@@ -9,7 +8,7 @@
 .container {
     position: relative;
     text-align: center;
-    color:black;
+    color: black;
 }
 
 .centered {
@@ -87,7 +86,8 @@
     margin-left: 10px;
     margin-right: 10px;
 }
-.imgh{
+
+.imgh {
     border: 3px solid rgb(67, 56, 56);
     border-radius: 10px;
 }
@@ -148,5 +148,5 @@
 
 
 
-    
+
 }

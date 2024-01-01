@@ -1,4 +1,4 @@
-.language{
+.language {
     display: flex;
     justify-content: right;
     margin-bottom: 6px;
@@ -12,7 +12,7 @@
 
 
 /* Weather Api */
-.card{
+.card {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -20,13 +20,15 @@
     border-radius: 4px;
     padding: 30px;
     background-color: rgba(23, 37, 42, 0.85);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease-in-out; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
+
 .card:hover {
     transform: scale(1.01);
 }
-.card-content{
+
+.card-content {
     border: 1px solid #332d2d;
     border-radius: 4px;
     padding-top: 30px;
@@ -36,10 +38,12 @@
     background-color: #fff;
 
 }
-.degree{
+
+.degree {
     font-size: x-large;
 }
-.location{
+
+.location {
     color: brown;
     font-size: large;
 }
@@ -80,7 +84,7 @@
 
 .data-item {
     color: white;
-    background-color:rgba(23, 37, 42, 0.85);
+    background-color: rgba(23, 37, 42, 0.85);
     width: 200px;
     height: 200px;
     border-radius: 8px;
@@ -108,6 +112,7 @@
         margin-left: 15px;
     }
 }
+
 /* Mobile Styles */
 @media only screen and (max-width: 789px) {
     .imageweather {
@@ -135,4 +140,3 @@
         font-size: 14px;
     }
 }
-

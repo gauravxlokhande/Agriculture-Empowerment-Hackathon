@@ -132,7 +132,7 @@ export default class Home extends LightningElement {
 
 
     // language translation
-     get options() {
+    get options() {
         return [
             { label: 'English', value: 'english' },
             { label: 'Hindi', value: 'hi' },
@@ -149,14 +149,14 @@ export default class Home extends LightningElement {
         this.CustomeTemplate = true;
 
         const SelectLanguage = event.target.value;
-        
+
         if (SelectLanguage == 'hi') {
-            GetAllTranslation({labelName:'Market_Descripton', language:'hi'})
+            GetAllTranslation({ labelName: 'Market_Descripton', language: 'hi' })
                 .then((result) => {
-                    this.storemarketdescription = result;   
-            }).catch((error) => {
-                
-            });
+                    this.storemarketdescription = result;
+                }).catch((error) => {
+
+                });
         } else {
             this.DefaultTemplate = true;
             this.CustomeTemplate = false;

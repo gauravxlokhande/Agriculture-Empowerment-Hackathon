@@ -1,4 +1,4 @@
-.language{
+.language {
     display: flex;
     justify-content: right;
 }
@@ -62,16 +62,17 @@
 }
 
 .views-section {
-    background-color:rgba(23, 37, 42, 0.85);
+    background-color: rgba(23, 37, 42, 0.85);
     padding: 20px;
     border-radius: 5px;
     flex: 0 0 40%;
     height: 100%;
 }
 
-.white{
+.white {
     color: white;
 }
+
 .text-area {
     width: 100%;
     margin-bottom: 10px;

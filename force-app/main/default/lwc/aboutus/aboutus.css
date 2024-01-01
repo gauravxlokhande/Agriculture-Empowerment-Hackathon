@@ -4,46 +4,53 @@
 }
 
 .custom-box {
-  padding: 17px;
+    padding: 17px;
     display: flex;
-    text-align:initial;
+    text-align: initial;
     flex-direction: column;
     color: white;
 }
-.custom-box b{
-font-family: 'Times New Roman';
+
+.custom-box b {
+    font-family: 'Times New Roman';
 }
-.custom-box h1{
+
+.custom-box h1 {
     font-family: Cambria;
 }
-.website{
+
+.website {
     display: inline;
     display: flex;
     margin-left: 20px;
 }
-.website a{
+
+.website a {
     margin-left: 5px;
     padding-top: 5px;
 }
 
-.website lightning-icon{
- margin-bottom: 10px;
+.website lightning-icon {
+    margin-bottom: 10px;
 }
-.instalinkedin img{
+
+.instalinkedin img {
     width: 25px;
     height: 25px;
     margin-right: 15px;
 }
-.websitelogo{
+
+.websitelogo {
     display: flex;
     justify-content: space-between;
 }
-.instalinkedin{
+
+.instalinkedin {
     margin-right: 49%;
 }
 
 @media (max-width: 989px) {
-    .instalinkedin{
-        margin:auto;
+    .instalinkedin {
+        margin: auto;
     }
 }

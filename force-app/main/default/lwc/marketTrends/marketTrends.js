@@ -110,27 +110,27 @@ export default class MarketTrends extends LightningElement {
         this.viewValue = event.target.value;
     }
     handleSubmitClick() {
-        if (this.viewValue ==null) {
+        if (this.viewValue == null) {
             this.dispatchEvent(new ShowToastEvent({
                 title: "You cannot submit the empty text",
                 variant: "warning"
             }));
         } else {
             insertViews({ view: this.viewValue })
-            .then(result => {
-                console.log(result)
-                this.showViews();
-                this.viewValue = '';
-                this.dispatchEvent(new ShowToastEvent({
-                    title: "Your Openion submited successfully",
-                    variant: "success"
-                }));
+                .then(result => {
+                    console.log(result)
+                    this.showViews();
+                    this.viewValue = '';
+                    this.dispatchEvent(new ShowToastEvent({
+                        title: "Your Openion submited successfully",
+                        variant: "success"
+                    }));
 
-            }).catch(error => {
+                }).catch(error => {
 
-            })
+                })
         }
-       
+
     }
 
     //to Show Views
@@ -150,27 +150,27 @@ export default class MarketTrends extends LightningElement {
     }
 
     //For Seasonal Calendar
-    @track seasonalItems='';
+    @track seasonalItems = '';
     @track columns = columns;
     sortDirection = 'asc';
     sortedBy;
 
     async fetchseasondata() {
-       await FetchSeasonalCalendarData()
-        .then((result) => {
-            this.seasonalItems = result.map(item => ({
-                ...item,
-                cropName: item.Seeds__r.Name,
-            }));
-        })
-        .catch((error) => {
-           
-            this.dispatchEvent(new ShowToastEvent({
-                title: "Error In Showing Data",
-                variant: "error"
-            }));
-        });
-    
+        await FetchSeasonalCalendarData()
+            .then((result) => {
+                this.seasonalItems = result.map(item => ({
+                    ...item,
+                    cropName: item.Seeds__r.Name,
+                }));
+            })
+            .catch((error) => {
+
+                this.dispatchEvent(new ShowToastEvent({
+                    title: "Error In Showing Data",
+                    variant: "error"
+                }));
+            });
+
     }
 
 
@@ -193,14 +193,14 @@ export default class MarketTrends extends LightningElement {
         this.CustomeTemplate = true;
 
         const SelectLanguage = event.target.value;
-        
+
         if (SelectLanguage == 'hi') {
-            GetAllTranslation({labelName:'MntDescription', language:'hi'})
+            GetAllTranslation({ labelName: 'MntDescription', language: 'hi' })
                 .then((result) => {
-                    this.storemarketdescription = result;   
-            }).catch((error) => {
-                
-            });
+                    this.storemarketdescription = result;
+                }).catch((error) => {
+
+                });
         } else {
             this.DefaultTemplate = true;
             this.CustomeTemplate = false;
