@@ -19,6 +19,7 @@
     transform: translate(-50%, -50%);
     font-family: 'Times New Roman';
     font-size: xx-large;
+    font-weight: bolder;
 }
 
 .paragraph {
@@ -28,6 +29,7 @@
     font-size: small;
     margin-left: 7px;
     margin-right: 7px;
+    font-weight: bolder;
 
 }
 
@@ -65,12 +67,12 @@
     height: 290px;
     margin: 20px;
     color: black;
-    background-color: rgba(51, 63, 67, 0.85);
-    /* border: 1px solid rgb(255, 253, 253); */
+    background-color: rgba(138, 187, 139, 0.85);
+    border: 2px solid rgb(98, 89, 89);
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
-    box-shadow: 10px 5px 5px rgb(181, 173, 173);
+    box-shadow: 10px 5px 5px rgb(46, 45, 45);
     ;
 
 }
@@ -100,7 +102,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
+    color: black;
 }
 
 .Name b,
@@ -109,8 +111,9 @@
 }
 
 .Information {
-   padding: 7px;
     display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
 
 }
 

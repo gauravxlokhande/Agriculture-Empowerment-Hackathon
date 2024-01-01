@@ -145,7 +145,7 @@ export default class MarketTrends extends LightningElement {
         showViews()
             .then(result => {
                 this.viewsData = JSON.parse(JSON.stringify(result));
-                console.log('View Shownnnn', this.viewsData);
+                // console.log('View Shownnnn', this.viewsData);
             })
     }
 
@@ -156,19 +156,21 @@ export default class MarketTrends extends LightningElement {
     sortedBy;
 
     async fetchseasondata() {
-        await FetchSeasonalCalendarData()
-            .then(result => {
-                console.log('result', result);
-                this.seasonalItems = result;
-                // this.seasonalItems = result.map(record => ({
-                //     ...record,
-                //     cropName: record.Seeds__r.Name,
-                // }));
-                // console.log(this.seasonalItems);
-            })
-            .catch(error => {
-                console.log('error', error);
-            })
+       await FetchSeasonalCalendarData()
+        .then((result) => {
+            this.seasonalItems = result.map(item => ({
+                ...item,
+                cropName: item.Seeds__r.Name,
+            }));
+        })
+        .catch((error) => {
+           
+            this.dispatchEvent(new ShowToastEvent({
+                title: "Error In Showing Data",
+                variant: "error"
+            }));
+        });
+    
     }
 
 
