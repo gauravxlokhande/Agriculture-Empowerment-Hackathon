@@ -12,9 +12,10 @@ https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/
 ```
 
 ## Technical Document Of Agriculture Empowerment:
-[Technical+Document+Template.dotx.pdf](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841537/Technical%2BDocument%2BTemplate.dotx.pdf)
 
-[Technical+Document+Template.dotx.docx](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841538/Technical%2BDocument%2BTemplate.dotx.docx)
+[Technical+Document+Template.dotx.docx](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841732/Technical%2BDocument%2BTemplate.dotx.docx)
+
+[Technical+Document+Template.dotx.pdf](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841733/Technical%2BDocument%2BTemplate.dotx.pdf)
 
 ## Here you can able to understand our concept:
 
