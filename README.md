@@ -11,6 +11,11 @@ https://www.canva.com/design/DAF3rY8Yb-M/kxtWO_CqZUz6HodPl_czxQ/edit?utm_content
 https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/
 ```
 
+## Technical Document Of Agriculture Empowerment:
+[Technical+Document+Template.dotx.pdf](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841537/Technical%2BDocument%2BTemplate.dotx.pdf)
+
+[Technical+Document+Template.dotx.docx](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13841538/Technical%2BDocument%2BTemplate.dotx.docx)
+
 ## Here you can able to understand our concept:
 
 https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/63b37ddc-5dba-4295-a715-c56e379cf15b
