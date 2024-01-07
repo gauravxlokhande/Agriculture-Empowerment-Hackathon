@@ -7,6 +7,17 @@
 ## PPT : [Agriculture Empowerment PPT.pptx](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13852689/Agriculture.Empowerment.PPT.pptx)
 
 
+# API USED
+## For Weather
+```
+https://api.weatherapi.com/v1/current.json?key=6388b321ff7a4f239de125943230612&q=${currentLocation.latitude},${currentLocation.longitude}`;
+```
+
+## For Agriculture Data
+```
+https://api.data.gov.in/catalog/6141ea17-a69d-4713-b600-0a43c8fd9a6c?api-key=579b464db66ec23bdd000001be46e8b8b04c4b746f8c908419d2c4e3&format=json&limit=1000&filters%5Bdistrict%5D=${this.selectedLocation}&filters%5Barrival_date%5D=${formattedDate}`;
+```
+
 
 
 
