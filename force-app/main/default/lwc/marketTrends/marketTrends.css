@@ -62,9 +62,9 @@
 }
 
 .views-section {
-    background-color: rgba(23, 37, 42, 0.85);
+    background-color: #394449;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     flex: 0 0 40%;
     height: 100%;
 }

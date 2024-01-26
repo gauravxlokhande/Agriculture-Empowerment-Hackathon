@@ -8,7 +8,7 @@
 .container {
     position: relative;
     text-align: center;
-    color: #FFFFFF;
+    color: #394449;
 }
 
 .centered {
@@ -65,8 +65,8 @@
     height: 290px;
     margin: 20px;
     padding: 5px;
-    color: #FFFFFF;
-    background-color: #56B43C;
+    color: #394449;
+    background-color: #95E57D;
     border: 1px solid rgb(98, 89, 89);
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
@@ -99,7 +99,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #FFFFFF;
+    color: #394449;
 }
 
 .Name b,
@@ -151,13 +151,13 @@
 /*  */
 .types{
     background-color: #394449;
-    color: #FFFFFF;
+    color: white;
 }
 .types:hover{
-    background-color: #72ac74;
+    background-color: #95E57D;
 }
 .heading{
-    background-color: #394449;
-    color: white;
+    background-color:  #394449;
+    color:white;
     border-radius: 5px;
 }

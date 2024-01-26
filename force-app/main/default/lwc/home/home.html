@@ -100,12 +100,15 @@
                 </div>
             </div>
 
-            <template if:false={StoreAgricultureData}>
-                <p class="slds-align_absolute-center slds-text-heading_large slds-m-top_medium "> Sorry! There Will be
-                    no Data in Api for
-                    {StoreCurrentCityOfUser} city. Thank you for visiting</p>
-                <p class="slds-align_absolute-center slds-text-heading_large"> wi'll working on that, Sooner it'll be
-                    available in {StoreCurrentCityOfUser}</p>
+            <template if:true={StoreAgricultureDataTemplate}>
+                <p class="slds-align_absolute-center slds-text-heading_large slds-m-top_medium ">
+                    {StoreCurrentCityOfUser} City Market Is Opening Soon...</p>
+                <p class="slds-align_absolute-center slds-text-heading_large slds-m-top_medium ">Please Check After Some
+                    Time.</p>
+                <p class="slds-align_absolute-center slds-text-heading_large slds-m-top_medium slds-m-bottom_medium ">
+                    Thank you for visiting.
+                </p>
+
             </template>
         </lightning-layout-item>
     </lightning-layout>

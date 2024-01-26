@@ -1,5 +1,4 @@
 import { LightningElement, track } from 'lwc';
-import GetAllTranslation from '@salesforce/apex/TranslateLanguageAgri.GetAllTranslation';
 
 
 export default class Home extends LightningElement {
@@ -11,6 +10,7 @@ export default class Home extends LightningElement {
 
     //Spinner
     @track Spinner = false;
+    @track StoreAgricultureDataTemplate = false;
 
 
     //latitude langitude
@@ -135,10 +135,10 @@ export default class Home extends LightningElement {
             .then((response) => response.json())
             .then((data) => {
                 this.StoreAgricultureData = data.records;
-                if (data.records.length == 0) {
-                    this.DataNotfoundTemplate = true;
+                if (data.records.length == 0 || data.records.length <=0) {
+                    this.StoreAgricultureDataTemplate = true;
                 } else {
-                    this.DataNotfoundTemplate = false;
+                    this.StoreAgricultureDataTemplate = false;
                 }
             }).catch(error => {
                 console.error('Error fetching data:', error.body.message);
