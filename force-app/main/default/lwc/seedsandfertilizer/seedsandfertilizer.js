@@ -83,9 +83,11 @@ export default class Seedsandfertilizer extends LightningElement {
         if (StoreSeedNAme=== 'Seeds') {
             this.SeedsTemplate = true;
             this.FertilizerTemplate = false;
+            this.WillWorkinOnThis = false;
         } else if (StoreSeedNAme === 'Fertilizers') {
             this.FertilizerTemplate = true;
-            this.SeedsTemplate = false; 
+            this.SeedsTemplate = false;
+            this.WillWorkinOnThis = false;
         } else if (StoreSeedNAme === 'Recommanded Seeds') {
             this.WillWorkinOnThis = true;
             this.SeedsTemplate = false;

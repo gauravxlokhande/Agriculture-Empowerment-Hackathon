@@ -89,7 +89,9 @@
 
             </div>
 
+
         </lightning-layout-item>
+
 
 
         <lightning-layout-item size="4" class="views-section">
@@ -124,9 +126,23 @@
                 </div>
             </template>
         </lightning-layout-item>
-
     </lightning-layout>
 
+    <!-- Row 1 -->
+    <lightning-layout multiple-rows class="container">
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="7"
+            padding="horizontal-small">
+            <div class="buttons">
+                <div>
+                    <lightning-button variant="brand" label="Previous" onclick={handleClickPrevious}></lightning-button>
+                </div>
+                <div>
+                    <lightning-button variant="brand" label="See more.."
+                        onclick={handleClickSeeMore}></lightning-button>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
 
 
 </template>

@@ -72,10 +72,12 @@ export default class MarketTrends extends LightningElement {
         this.showMarketData = true;
 
     }
+    
+    @track Recordlimitter = 9;
 
     //to fetch city wise data
     fetchMarketDataCityWise() {
-        let endPoint = `https://api.data.gov.in/catalog/6141ea17-a69d-4713-b600-0a43c8fd9a6c?api-key=579b464db66ec23bdd000001be46e8b8b04c4b746f8c908419d2c4e3&format=json&limit=1000&filters%5Bdistrict%5D=${this.searchValue}`;
+        let endPoint = `https://api.data.gov.in/catalog/6141ea17-a69d-4713-b600-0a43c8fd9a6c?api-key=579b464db66ec23bdd000001be46e8b8b04c4b746f8c908419d2c4e3&format=json&limit=${this.Recordlimitter}&filters%5Bdistrict%5D=${this.searchValue}`;
         fetch(endPoint, {
             method: "GET"
         })
@@ -207,5 +209,20 @@ export default class MarketTrends extends LightningElement {
         }
     }
 
+
+    handleClickSeeMore() {
+        if (this.Recordlimitter) {
+            this.Recordlimitter = this.Recordlimitter + 9;
+            this.fetchMarketDataCityWise();
+            // this.fetchMarketData();
+        }
+    }
+    handleClickPrevious() {
+    if (this.Recordlimitter>9) {
+        this.Recordlimitter = this.Recordlimitter - 9;
+        this.fetchMarketDataCityWise();
+        // this.fetchMarketData();
+    }
+    }
 
 }

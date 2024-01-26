@@ -1,6 +1,6 @@
 .weather-report-card{
-    background-color: rgb(86, 180, 60);
-    color: #FFFFFF;
+    background-color:rgb(149,229,125);
+    color: rgb(57,69,72);
 }
 
 /* All Agriculture Data */
@@ -11,9 +11,9 @@
 }
 
 .data-item {
-    color: #FFFFFF;
+    color: rgb(57,69,72);
     font-weight: bold;
-    background-color:rgb(86, 180, 60);
+    background-color:rgb(149,229,125);
     width: 200px;
     height: 200px;
     padding: 10px;
@@ -25,7 +25,7 @@
 }
 
 .data-item:hover {
-    background-color: goldenrod;
+    background-color: rgb(217, 226, 228);
     transform: calc(1.1);
 }
 
