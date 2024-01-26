@@ -8,7 +8,7 @@
 .container {
     position: relative;
     text-align: center;
-    color: black;
+    color: #FFFFFF;
 }
 
 .centered {
@@ -31,7 +31,6 @@
     font-weight: bolder;
 
 }
-
 
 
 /* heading Seeds & Fertilizers*/
@@ -65,15 +64,13 @@
     width: 265px;
     height: 290px;
     margin: 20px;
-    color: black;
-    background-color: rgba(138, 187, 139, 0.85);
+    padding: 5px;
+    color: #FFFFFF;
+    background-color: #56B43C;
     border: 1px solid rgb(98, 89, 89);
-    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     word-wrap: break-word;
     box-shadow: 10px 5px 5px rgb(46, 45, 45);
-    ;
-
 }
 
 .block:hover {
@@ -102,7 +99,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
+    color: #FFFFFF;
 }
 
 .Name b,
@@ -149,4 +146,18 @@
 
 
 
+}
+
+/*  */
+.types{
+    background-color: #394449;
+    color: #FFFFFF;
+}
+.types:hover{
+    background-color: #FFFFFF;
+}
+.heading{
+    background-color: #394449;
+    color: white;
+    border-radius: 5px;
 }

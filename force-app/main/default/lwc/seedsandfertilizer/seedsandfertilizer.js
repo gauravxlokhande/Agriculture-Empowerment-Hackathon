@@ -12,7 +12,9 @@ export default class Seedsandfertilizer extends LightningElement {
         this.FetchAllFertilizerData();
     }
 
-    @track DefaultTemplate = true;
+    @track SeedsTemplate = true;
+    @track FertilizerTemplate = false;
+    @track WillWorkinOnThis = false;
 
     @track HeaderSeedsAndFertilizer = HeaderSeedsAndFertilizer;
     @track StoreAllSeedsData = [];
@@ -72,6 +74,26 @@ export default class Seedsandfertilizer extends LightningElement {
         } else {
             this.DefaultTemplate = true;
             this.CustomeTemplate = false;
+        }
+    }
+
+    OnclickOfSeedTypes(event) {
+        const StoreSeedNAme = event.currentTarget.dataset.name;
+        
+        if (StoreSeedNAme=== 'Seeds') {
+            this.SeedsTemplate = true;
+            this.FertilizerTemplate = false;
+        } else if (StoreSeedNAme === 'Fertilizers') {
+            this.FertilizerTemplate = true;
+            this.SeedsTemplate = false; 
+        } else if (StoreSeedNAme === 'Recommanded Seeds') {
+            this.WillWorkinOnThis = true;
+            this.SeedsTemplate = false;
+            this.FertilizerTemplate = false;
+        }else if (StoreSeedNAme ==='Recommanded Fertilizers') {
+            this.WillWorkinOnThis = true;
+            this.SeedsTemplate = false;
+            this.FertilizerTemplate = false;
         }
     }
 

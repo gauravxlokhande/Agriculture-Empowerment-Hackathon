@@ -1,6 +1,9 @@
 .main {
-    background-color: rgba(51, 63, 67, 0.85);
+    background-color:#161616;
     width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
 }
 
 .custom-box {
@@ -8,7 +11,7 @@
     display: flex;
     text-align: initial;
     flex-direction: column;
-    color: white;
+    color: #FFFFFF;
 }
 
 .custom-box b {
@@ -47,6 +50,13 @@
 
 .instalinkedin {
     margin-right: 49%;
+}
+.society-footer {
+    background-color:#1B1E28;
+    color:#FFFFFF;
+    padding: 25px;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (max-width: 989px) {

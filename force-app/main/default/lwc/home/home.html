@@ -1,107 +1,123 @@
 <template>
 
-    <!-- marquee effect -->
-    <template if:true={DefaultTemplate}>
-        <marquee style="font-weight: bolder;" behavior="" direction="right">WELCOME TO THE AGRICULTURE EMPOWERMENT SITE
-        </marquee>
-    </template>
-    <template if:true={CustomeTemplate}>
-        <marquee style="font-weight: bolder;" behavior="" direction="right">कृषि अधिकारिता स्थल पर आपका स्वागत है
-        </marquee>
-    </template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+            padding="horizontal-small">
 
-    <!-- Select language -->
-    <lightning-combobox class="language" label="Select Language" value={SelectLanguage} placeholder="Select Language"
-        options={options} onchange={handleChangeofLanguage}></lightning-combobox>
-
-
-    <div class="card">
-        <!-- Weather Data -->
-        <div class="card">
-            <template if:true={result}>
-                <div class="card-content">
-                    <div class="weather-info">
-                        <img class="weather-icon" src={imageURL} alt="Weather Icon" />
-                        <p class="condition">{result.current.condition.text}</p>
+            <!-- Weather Data -->
+            <div class="weather-report-card slds-p-top_large">
+                <template if:true={result}>
+                    <h1 class="slds-text-heading_large slds-align_absolute-center">Current Weather</h1>
+                    <h1 class=" slds-text-heading_small slds-align_absolute-center">{date}</h1>
+                    <img class="slds-align_absolute-center" src={imageURL} alt="Weather Icon" />
+                    <p class="slds-align_absolute-center  slds-text-heading_medium">{result.location.name},
+                        {result.location.region}, {result.location.country}
+                    </p>
+                    <b class=" slds-align_absolute-center slds-text-heading_large slds-p-around_small">
+                        {result.current.feelslike_c}°C
+                    </b>
+                    <b class="slds-align_absolute-center slds-text-heading_small">{result.current.condition.text}</b>
+                    <div class=" slds-align_absolute-center slds-border_top slds-border_bottom slds-m-top_medium">
+                        <h1 class="slds-text-heading_small slds-p-left_small slds-p-around_medium">RealFeel Shade
+                            <b class=" slds-p-left_large slds-text-heading_medium">{result.current.feelslike_c}°C</b>
+                        </h1>
                     </div>
-                    <div class="additional-info">
-                        <div>
-                            <p class="degree"><b>{result.current.feelslike_c}°C </b></p>
-                        </div>
+                    <div class=" slds-align_absolute-center slds-border_top slds-border_bottom">
+                        <h1 class="slds-text-heading_small slds-p-left_small slds-p-around_medium">Wind
+                            <b class=" slds-p-left_large slds-text-heading_medium">NE
+                                {result.current.wind_speed}Km/h</b>
+                        </h1>
+                    </div>
+                    <div class=" slds-align_absolute-center slds-border_top">
+                        <h1 class="slds-text-heading_small slds-p-left_small slds-p-around_medium">Humidity
+                            <b class=" slds-p-left_large slds-text-heading_medium">
+                                {result.current.humidity}%</b>
+                        </h1>
+                        <h1 class="slds-text-heading_small slds-p-left_small slds-p-around_medium">Visibility
+                            <b class=" slds-p-left_large slds-text-heading_medium">
+                                {visibility}%</b>
+                        </h1>
+                    </div>
+                </template>
+                <template if:false={result}>
+                    <p>No Weather Data Available, please check after sometime.</p>
+                </template>
+            </div>
 
-                        <p class="location">{result.location.name}, {result.location.region}, {result.location.country}
-                        </p>
-                        <p class="local-time">{date}</p>
+
+            <!--   other citys  maket data -->
+            <div class="Other-citys-marketdata slds-m-top_medium">
+                <div class="all-city-box slds-box">
+                    <p class="slds-text-heading_large slds-m-top_small slds-m-left_medium">See Othe City's Makerts
+                        prices...!</p>
+                    <div
+                        class="all-cities slds-text-heading_medium slds-m-around_medium slds-m-left_medium slds-p-around_medium">
+                        <h1 data-name="Mumbai" onclick={clickoncity} class="slds-border_bottom">1. Mumbai</h1>
+                        <h1 data-name="Surat" onclick={clickoncity} class="slds-border_bottom">2. Surat</h1>
+                        <h1 data-name="Ahmedabad" onclick={clickoncity} class="slds-border_bottom">3. Ahmedabad</h1>
+                        <h1 data-name="Pune" onclick={clickoncity} class="slds-border_bottom">4. Pune</h1>
+                        <h1 data-name="Bangalore" onclick={clickoncity} class="slds-border_bottom">5. Bangalore</h1>
+                        <h1 data-name="Jaipur" onclick={clickoncity} class="slds-border_bottom">6. Jaipur</h1>
+                        <h1 data-name="Lucknow" onclick={clickoncity} class="slds-border_bottom">7. Lucknow</h1>
                     </div>
                 </div>
-            </template>
-        </div>
-    </div>
-
-    <!-- City Market Insights -->
-
-    <template if:true={DefaultTemplate}>
-        <h1 class="heading">City Market Insights</h1>
-    </template>
-    <template if:true={DefaultTemplate}>
-        <p class="main-description">
-            City Market Insights provides a comprehensive overview of local agricultural markets, offering
-            you a detailed glimpse into the dynamics of each city's agricultural landscape. Explore real-time
-            data on commodities, arrival dates, pricing trends, and more. Gain valuable insights to make
-            informed decisions in the ever-evolving world of agriculture. Whether you're a farmer, trader, or
-            enthusiast, City Market Insights equips you with the knowledge needed to navigate and thrive in your city's
-            agricultural markets. <br> <br>
-            Select Your City to Know More About Market!
-        </p>
-    </template>
-    <template if:true={CustomeTemplate}>
-        <h1 class="heading">सिटी मार्केट इनसाइट्स</h1>
-        <p class="main-description">{storemarketdescription}</p>
-    </template>
-
-
-    <!-- Picklist To Select City -->
-    <template if:true={StoreAgricultureDataTemplate}>
-        <lightning-combobox class="combobox" value={selectedLocation} options={locationOptions}
-            placeholder="Select Your City" onchange={handleChangeofSelectedCity}></lightning-combobox>
-    </template>
-
-    <!-- All City Related Commodity Data -->
-
-    <div class="data-container">
-        <template for:each={StoreAgricultureData} for:item="data">
-            <div key={data.id} class="data-item">
-                <p><b>Arrival Date:</b> {data.arrival_date}</p>
-                <p><b>Commodity:</b> {data.commodity}</p>
-                <p><b>District:</b> {data.district}</p>
-                <p><b>Market:</b> {data.market}</p>
-                <p><b>Max Price:</b> {data.max_price}</p>
-                <p><b>Min Price:</b> {data.min_price}</p>
-                <p><b>Modal Price:</b> {data.modal_price}</p>
-                <p><b>State:</b> {data.state}</p>
             </div>
-        </template>
-    </div>
+        </lightning-layout-item>
 
-    <template if:true={DataNotfoundTemplate}>
 
-        <template if:true={DefaultTemplate}>
-            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
-                Market will be opening soon
-            </h1>
-            <h2 style="display: flex; justify-content:center; "><b>Note: </b> It's a live market data show it is
-                visible when market opens.</h2>
-        </template>
 
-        <template if:true={CustomeTemplate}>
-            <h1 style="font-weight: bolder; font-size:x-large; display:flex; justify-content:center">
-                जल्द ही बाजार खुलने वाला है
-            </h1>
-            <h2 style="display: flex; justify-content:center; "><b>
-                    टिप्पणी: </b> यह एक लाइव मार्केट डेटा है
-                बाज़ार खुलने पर दिखाई देता है.</h2>
-        </template>
 
+        <!-- Live Market Commodity Data -->
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+            padding="horizontal-small">
+            <h1 class="slds-align_absolute-center slds-text-heading_medium slds-border_bottom slds-p-around_medium">
+                Hello! Here is your
+                all commodity
+                prices of Today..!</h1>
+
+            <div class="data-container">
+                <template if:true={StoreAgricultureData} for:each={StoreAgricultureData} for:item="data">
+                    <div key={data.id} class="data-item">
+                        <p><b>Arrival Date:</b> {data.arrival_date}</p>
+                        <p><b>Commodity:</b> {data.commodity}</p>
+                        <p><b>District:</b> {data.district}</p>
+                        <p><b>Market:</b> {data.market}</p>
+                        <p><b>Max Price:</b> {data.max_price}</p>
+                        <p><b>Min Price:</b> {data.min_price}</p>
+                        <p><b>Modal Price:</b> {data.modal_price}</p>
+                        <p><b>State:</b> {data.state}</p>
+                    </div>
+                </template>
+            </div>
+            <div class="previous-more-button slds-m-top_medium">
+                <div>
+                    <lightning-button class="slds-m-left_large" variant="brand" label="Previous"
+                        onclick={handleClickOfShowPrevios}></lightning-button>
+                </div>
+                <div>
+                    <lightning-button class="slds-m-right_large" variant="brand" label="Show More.."
+                        onclick={handleClickOfShowMore}></lightning-button>
+                </div>
+            </div>
+
+            <template if:false={StoreAgricultureData}>
+                <p class="slds-align_absolute-center slds-text-heading_large slds-m-top_medium "> Sorry! There Will be
+                    no Data in Api for
+                    {StoreCurrentCityOfUser} city. Thank you for visiting</p>
+                <p class="slds-align_absolute-center slds-text-heading_large"> wi'll working on that, Sooner it'll be
+                    available in {StoreCurrentCityOfUser}</p>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+
+
+
+    <!-- Spinner -->
+    <template if:true={Spinner}>
+        <div class="exampleHolder">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
     </template>
+
 
 </template>

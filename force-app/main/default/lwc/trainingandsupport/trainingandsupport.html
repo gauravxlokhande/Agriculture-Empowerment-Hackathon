@@ -172,18 +172,19 @@
     </div>
 
     <!-- Show Map  -->
-    <!--show-footer -->
+    <h1 class="slds-text-heading_large slds-p-around_medium">See Your Nearest Agriculture Shops.</h1>
+
     <div class="map">
         <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel} list-view={listView}>
         </lightning-map>
     </div>
 
     <template if:true={DefaultTemplate}>
-        <h1 class="YTheading">Insightful Farming Practices</h1>
+        <h1 class="YTheading slds-p-around_large">Insightful Farming Practices</h1>
     </template>
 
     <template if:true={CustomeTemplate}>
-        <h1 class="YTheading">ज्ञानवर्धक कृषि पद्धतियाँ</h1>
+        <h1 class="YTheading slds-p-around_large">ज्ञानवर्धक कृषि पद्धतियाँ</h1>
     </template>
     <div class="video-grid">
         <div class="video-item">
