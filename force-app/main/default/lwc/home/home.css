@@ -52,3 +52,11 @@ justify-content: space-between;
     background-color:#394449 ;
     color: white;
 }
+.important-links{
+    background-color:#394449 ;
+    color: white;
+}
+.inm-data{
+    display: flex;
+    flex-direction: row;
+}

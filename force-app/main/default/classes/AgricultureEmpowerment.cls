@@ -75,5 +75,11 @@ public without sharing class AgricultureEmpowerment {
       List<Schems__c> scheme =[Select Id,Name,Read_More__c,Information__c,Date__c from Schems__c ];
       return  scheme;
   }
+
+  @AuraEnabled
+  public static List<Important_Links__c> ImportantLinks(){    
+  List<Important_Links__c> implink =[Select Id,Name,Image__c from Important_Links__c ];
+  return  implink;
+}
   
 }

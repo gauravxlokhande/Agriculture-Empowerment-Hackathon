@@ -14,6 +14,7 @@ const columns = [
 
 export default class MarketTrends extends LightningElement {
 
+
     @track options = [
         { label: '---', value: '---' },
         { label: 'Pune', value: 'Pune' },

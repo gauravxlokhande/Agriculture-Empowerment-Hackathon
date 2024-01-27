@@ -1,10 +1,12 @@
 import { LightningElement, track } from 'lwc';
+import getApexData from '@salesforce/apex/AgricultureEmpowerment.ImportantLinks';
 
 
 export default class Home extends LightningElement {
 
     connectedCallback() {
         this.handleCurrentLocation();
+        this.fetchlinksdata();
     }
 
 
@@ -113,7 +115,7 @@ export default class Home extends LightningElement {
 
 
 
-    @track MarketDataCount =9;
+    @track MarketDataCount =15;
   
 
     // To Fetch The Agriculture Data 
@@ -155,16 +157,36 @@ export default class Home extends LightningElement {
     }
 
     handleClickOfShowPrevios() {
-        if (this.MarketDataCount>9) {
-            this.MarketDataCount = this.MarketDataCount - 9;
+        if (this.MarketDataCount>20) {
+            this.MarketDataCount = this.MarketDataCount - 15;
             this.FetchAgricultureData();
         }
     }
 
     handleClickOfShowMore() {
         if (this.MarketDataCount) {
-            this.MarketDataCount = this.MarketDataCount + 9;
+            this.MarketDataCount = this.MarketDataCount + 15;
             this.FetchAgricultureData();
         }
     }
+
+
+    // connectedCallback() {
+    //     this.fetchlinksdata();
+    // }
+
+
+    @track linksdata;
+    
+    fetchlinksdata() {
+        getApexData()
+        .then((result) => {
+            this.linksdata = result;
+        }).catch((error) => {
+            
+        });
+    }
+    
+
+
 }
