@@ -8,6 +8,12 @@
 ## Technical Document: [Technical Document.pdf](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13852710/Technical.Document.Agriculture.Empowerment.pdf)
 
 
+# Agriculture Empowerment
+
+![clideo_editor_20407ea2111c4d51809f6018bec152c1-ezgif com-optimize (1)](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/97a40a1f-94c0-42d1-8944-8691fe121aa1)
+
+
+
 ## PPT : [Agriculture Empowerment PPT.pptx](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/files/13852689/Agriculture.Empowerment.PPT.pptx)
 
 
