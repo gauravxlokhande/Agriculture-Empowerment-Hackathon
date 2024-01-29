@@ -3,46 +3,54 @@ import GetAllTranslation from '@salesforce/apex/TranslateLanguageAgri.GetAllTran
 
 export default class Trainingandsupport extends LightningElement {
 
+  @track zoomLevel = 5;
+  @track listView = "visible";
+  @track Storelatitude;
+  @track Storelongitude;
+  @track mapMarkers = [];
 
-  @track mapMarkers;
-  @track zoomLevel;
-  @track listView;
   connectedCallback() {
-    this.mapMarkers = [
-      {
-        location: {
-          City: 'Surat',
-          Country: 'India',
-          PostalCode: '394101',
-          State: 'Gujarat',
-          Street: 'Boleward,Surat'
-        },
-        title: "Boleward,Surat",
-        description: "TCS",
-        icon: "standard:account"
-      },
-      {
-        location: {
-          City: 'Surat',
-          Country: 'India',
-          PostalCode: '394101',
-          State: 'Gujarat',
-          Street: 'Goga chauk, Surat',
+    this.handleCurrentLocation();
+  }
 
+  handleCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const currentLocation = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          };
+
+          this.Storelatitude = currentLocation.latitude;
+          this.Storelongitude = currentLocation.longitude;
+
+          console.log('Current Location:', this.Storelatitude);
+          console.log('Current Location:', this.Storelongitude);
+
+          // Update mapMarkers after obtaining current location
+          this.mapMarkers = [
+            {
+              location: {
+                Latitude: this.Storelatitude,
+                Longitude: this.Storelongitude
+              }
+            }
+          ];
         },
-        title: "Goga chauk, Surat",
-        description: "Krishi Kendra,Surat !",
-        icon: "standard:account"
-      }
-    ];
-    //Google Maps API supports zoom levels from 1 to 22 in desktop browsers, and from 1 to 20 on mobile.
-    this.zoomLevel = 10;
-    this.listView = "visible";
+        (error) => {
+          console.error('Error getting current position:', error.message);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
   }
 
 
 
 
+  
   //select language
 
   get options() {
