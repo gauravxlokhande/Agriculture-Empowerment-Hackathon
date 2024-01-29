@@ -1,5 +1,8 @@
 # Agricultural Empowerment - Nurturing Growth, Empowering Farmers.
 
+![clideo_editor_20407ea2111c4d51809f6018bec152c1-ezgif com-optimize (1)](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/97a40a1f-94c0-42d1-8944-8691fe121aa1)
+
+
 [Visit our website](https://gauravlokhande-dev-ed.develop.my.site.com/AgricultureEmpowerment/s/)
 
 
