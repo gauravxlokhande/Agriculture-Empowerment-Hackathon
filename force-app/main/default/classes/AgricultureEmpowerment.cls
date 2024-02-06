@@ -78,7 +78,7 @@ public without sharing class AgricultureEmpowerment {
 
   @AuraEnabled
   public static List<Important_Links__c> ImportantLinks(){    
-  List<Important_Links__c> implink =[Select Id,Name,Image__c from Important_Links__c ];
+  List<Important_Links__c> implink =[Select Id,Name,Image__c,Url__c from Important_Links__c ];
   return  implink;
 }
   
