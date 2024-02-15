@@ -1,4 +1,7 @@
-# Agricultural Empowerment - Nurturing Growth, Empowering Farmers.
+# Agricultural Empowerment - Nurturing Growth, Empowering Farmers. (Winner Of Global level Salesforce Impact Hackathon 2024)
+
+![46](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/37576783-48d1-48c4-bdcd-6db466399834)
+
 
 ![clideo_editor_20407ea2111c4d51809f6018bec152c1-ezgif com-optimize (1)](https://github.com/gaurravlokhande/Agriculture-Empowerment-Hackathon/assets/119065314/97a40a1f-94c0-42d1-8944-8691fe121aa1)
 
