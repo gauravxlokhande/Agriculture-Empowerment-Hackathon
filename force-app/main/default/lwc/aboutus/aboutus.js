@@ -14,7 +14,7 @@ export default class Aboutus extends NavigationMixin(LightningElement) {
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-                url: "https://www.salesforce.com/trailblazer/mdhore1"
+                url: "https://github.com/gauravxlokhande"
             }
         });
     }
